@@ -508,6 +508,15 @@ button {
   line-height: 1;
 }
 
+.hero-stage__stat-l {
+  font-family: "Reddit Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+  margin-top: 8px;
+}
+
 /* Nav over dark hero */
 .hero-stage ~ * .nav,
 .nav--light {
