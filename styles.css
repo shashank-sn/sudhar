@@ -2968,12 +2968,18 @@ body:has(.hero-stage) .nav .logo__dot {
 }
 
 .legal__toc {
-  position: sticky;
-  top: 104px;
+  position: static;
   align-self: start;
   border-top: 1px solid var(--rule);
   padding-top: 24px;
   height: max-content;
+}
+
+@media (min-width: 960px) {
+  .legal__toc {
+    position: sticky;
+    top: 104px;
+  }
 }
 
 .legal__toc .eyebrow {
