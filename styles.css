@@ -2872,3 +2872,272 @@ body:has(.hero-stage) .nav .logo__dot {
     display: initial;
   }
 }
+
+/* ========================================
+   Legal pages (privacy, terms, refund)
+   ======================================== */
+.legal-hero {
+  padding: clamp(140px, 18vw, 220px) 0 clamp(40px, 5vw, 64px);
+  background: var(--paper-2);
+  position: relative;
+  overflow: hidden;
+}
+
+.legal-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--rule-soft);
+}
+
+.legal-hero__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+  .legal-hero__inner {
+    padding: 0 40px;
+  }
+}
+
+.legal-hero__title {
+  font-size: clamp(38px, 6vw, 84px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+  margin: 20px 0 0;
+  max-width: 18ch;
+}
+
+.legal-hero__meta {
+  margin-top: clamp(32px, 4vw, 48px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 48px;
+  font-family: "Reddit Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.legal-hero__meta > span strong {
+  display: block;
+  color: var(--ink);
+  margin-top: 6px;
+  font-family: "Reddit Sans", ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 600;
+}
+
+.legal {
+  padding: clamp(48px, 7vw, 96px) 0 clamp(96px, 12vw, 160px);
+  background: var(--paper);
+}
+
+.legal__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(40px, 5vw, 72px);
+}
+
+@media (min-width: 768px) {
+  .legal__inner {
+    padding: 0 40px;
+  }
+}
+
+@media (min-width: 960px) {
+  .legal__inner {
+    grid-template-columns: 260px 1fr;
+    gap: clamp(56px, 7vw, 96px);
+  }
+}
+
+.legal__toc {
+  position: sticky;
+  top: 104px;
+  align-self: start;
+  border-top: 1px solid var(--rule);
+  padding-top: 24px;
+  height: max-content;
+}
+
+.legal__toc .eyebrow {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.legal__toc ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  counter-reset: toc;
+}
+
+.legal__toc li {
+  counter-increment: toc;
+}
+
+.legal__toc a {
+  display: flex;
+  gap: 14px;
+  color: var(--ink-2);
+  padding: 6px 0;
+  line-height: 1.35;
+  transition: color 180ms var(--ease);
+}
+
+.legal__toc a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: "Reddit Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.legal__toc a:hover {
+  color: var(--ink);
+}
+
+.legal__body {
+  max-width: 72ch;
+}
+
+.legal__intro {
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin: 0 0 clamp(48px, 5vw, 72px);
+  padding-bottom: clamp(32px, 4vw, 48px);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.legal__body h2 {
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 700;
+  margin: clamp(48px, 6vw, 72px) 0 20px;
+  color: var(--ink);
+  scroll-margin-top: 120px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.legal__body h2::before {
+  content: attr(data-num);
+  font-family: "Reddit Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  font-weight: 500;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.legal__body h2:first-child {
+  margin-top: 0;
+}
+
+.legal__body p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ink-2);
+  margin: 0 0 16px;
+}
+
+.legal__body ul {
+  padding: 0;
+  margin: 0 0 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.legal__body ul li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+
+.legal__body ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 10px;
+  height: 1px;
+  background: var(--ink);
+}
+
+.legal__body strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.legal__body a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--signal);
+  padding-bottom: 1px;
+  transition: background-color 180ms var(--ease);
+}
+
+.legal__body a:hover {
+  background: var(--signal-soft);
+}
+
+.legal__contact {
+  margin-top: clamp(48px, 6vw, 80px);
+  padding: clamp(32px, 4vw, 48px);
+  background: var(--paper-2);
+  border-radius: var(--radius);
+}
+
+.legal__contact .eyebrow {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.legal__contact h3 {
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.legal__contact p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin: 0 0 16px;
+}
+
+.legal__contact a.legal__contact-email {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 2px solid var(--signal);
+  padding-bottom: 2px;
+}
