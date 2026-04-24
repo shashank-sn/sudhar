@@ -447,14 +447,15 @@ button {
 }
 
 .hero-stage__title {
-  font-size: clamp(36px, 5.8vw, 80px);
+  font-size: clamp(30px, 5.8vw, 80px);
   font-weight: 800;
   letter-spacing: -0.03em;
-  line-height: 1;
+  line-height: 1.05;
   color: #fff;
   max-width: 16ch;
   margin: 0;
   text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
 .hero-stage__sub {
@@ -1364,6 +1365,8 @@ body:has(.hero-stage) .nav .logo__dot {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: background 260ms var(--ease), color 260ms var(--ease);
 }
 
@@ -3140,4 +3143,58 @@ body:has(.hero-stage) .nav .logo__dot {
   color: var(--ink);
   border-bottom: 2px solid var(--signal);
   padding-bottom: 2px;
+}
+
+/* ========================================
+   Responsive fixes
+   ======================================== */
+
+/* Topics body: correct grid column on mobile (avoid 64px number column) */
+@media (max-width: 767px) {
+  .topics__body {
+    grid-column: 2 / -1;
+    margin-top: 8px;
+  }
+}
+
+/* Services body: correct grid column below desktop (avoid 56px number column) */
+@media (max-width: 899px) {
+  .services__body {
+    grid-column: 2 / -1;
+  }
+}
+
+/* Newsletter value strip: stack on small mobile */
+@media (max-width: 599px) {
+  .hero__values {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .hero__value {
+    gap: 16px;
+  }
+}
+
+/* Box shadows: reduce on mobile to avoid right-edge clipping */
+@media (max-width: 599px) {
+  .hero__media {
+    box-shadow: 8px 8px 0 0 var(--signal);
+  }
+  .feature__media {
+    box-shadow: 8px 8px 0 0 var(--signal);
+  }
+  .hero--wwm__band {
+    box-shadow: 8px 8px 0 0 var(--signal);
+  }
+}
+
+/* Testimonial cards: remove stagger on single-column mobile */
+@media (max-width: 559px) {
+  .testi-card:nth-child(even) {
+    transform: none;
+    box-shadow: 0 8px 24px -16px rgba(0, 0, 0, 0.12);
+  }
+  .testi-cards:hover .testi-card:nth-child(even) {
+    animation: none;
+  }
 }
