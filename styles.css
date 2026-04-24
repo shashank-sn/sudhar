@@ -369,6 +369,7 @@ button {
   font-weight: 600;
   letter-spacing: -0.015em;
   padding: 10px 0;
+  color: var(--ink);
 }
 
 /* ========================================
