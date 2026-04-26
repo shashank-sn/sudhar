@@ -36,8 +36,16 @@
       .program--dark .program__incl-l { color: rgba(255,255,255,0.62); }
       .program--dark .program__line { border-color: rgba(255,255,255,0.12); }
       .program--dark .program__feature { border-color: rgba(255,255,255,0.12); }
+      @media (max-width: 640px) {
+        .program { padding: 28px 22px; border-radius: 22px; gap: 32px; }
+        .program__price-block { padding: 22px; }
+      }
       @media (min-width: 900px) {
         .program { grid-template-columns: 1.15fr 1fr; padding: 64px; gap: 64px; align-items: start; }
+      }
+      .program__side { width: 100%; min-width: 0; }
+      @media (max-width: 899px) {
+        .program__side { position: static; }
       }
       .program__head { display: flex; flex-direction: column; gap: 18px; }
       .program__eyebrow {
@@ -189,12 +197,51 @@
         width: fit-content;
       }
       .program--dark .program__pill { background: rgba(255,255,255,0.08); color: var(--paper); }
+
+      /* Featured/highlighted price block */
+      .program__price-block--featured {
+        background: var(--signal);
+        border-color: var(--ink);
+        color: var(--ink);
+        box-shadow: 10px 10px 0 0 var(--ink);
+        position: relative;
+      }
+      .program__price-block--featured .program__price-l { color: rgba(0,0,0,0.62); }
+      .program__price-block--featured .program__price-sub { opacity: 0.78; }
+      .program__price-block--featured::after {
+        content: "Most popular";
+        position: absolute;
+        top: -12px;
+        right: 16px;
+        background: var(--ink);
+        color: var(--paper);
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        padding: 5px 10px;
+        border-radius: 999px;
+      }
+      .program--dark .program__price-block--featured {
+        background: var(--signal);
+        color: var(--ink);
+        border-color: var(--signal);
+        box-shadow: 10px 10px 0 0 rgba(255,255,255,0.92);
+      }
+
+      /* Hero stats with icons */
+      .hero--wwm__credits .credit-icon {
+        width: 26px; height: 26px;
+        margin-bottom: 12px;
+        color: var(--ink);
+        opacity: 0.85;
+      }
     </style>
   </head>
   <body>
     <header class="nav">
       <div class="nav__inner">
-        <a href="index.html" class="logo"><span class="logo__dot" aria-hidden="true"></span><span>Hi! I&rsquo;m sg <span class="logo__wave" aria-hidden="true">👋🏽</span></span></a>
+        <a href="index.html" class="logo"><span class="logo__dot" aria-hidden="true"></span><span>Hi! I&rsquo;m SG <span class="logo__wave" aria-hidden="true">👋🏽</span></span></a>
         <ul class="nav__links">
           <li><a href="index.html" class="nav__link">Home</a></li>
           <li><a href="newsletter.html" class="nav__link">Newsletter</a></li>
@@ -247,18 +294,37 @@
 
         <div class="hero--wwm__credits reveal">
           <div>
+            <svg class="credit-icon" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+              <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="18" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M3 20c0-3 2.7-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M16 19c0-2.2 2-4 4.5-4s2.5 0 3.5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
             <div class="hero--wwm__credit-n">35K+</div>
             <div class="hero--wwm__credit-l">Business owners trained</div>
           </div>
           <div>
+            <svg class="credit-icon" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+              <circle cx="13" cy="13" r="10" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M3 13h20M13 3c2.8 3 4 6.5 4 10s-1.2 7-4 10c-2.8-3-4-6.5-4-10s1.2-7 4-10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
             <div class="hero--wwm__credit-n">12</div>
             <div class="hero--wwm__credit-l">Countries</div>
           </div>
           <div>
+            <svg class="credit-icon" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+              <rect x="4" y="6" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M9 6V3m8 3V3M4 11h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
             <div class="hero--wwm__credit-n">14 yrs</div>
             <div class="hero--wwm__credit-l">In business</div>
           </div>
           <div>
+            <svg class="credit-icon" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+              <rect x="3" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M9 22h8M13 19v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M9 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
             <div class="hero--wwm__credit-n">100%</div>
             <div class="hero--wwm__credit-l">Online</div>
           </div>
@@ -337,7 +403,7 @@
             </div>
 
             <aside class="program__side">
-              <div class="program__price-block">
+              <div class="program__price-block program__price-block--featured">
                 <div class="program__price-l">Now at just</div>
                 <div class="program__price-n">₹6,999</div>
                 <div class="program__price-sub">2 days &middot; entirely online &middot; entirely hands-on.</div>
@@ -451,7 +517,7 @@
             </div>
 
             <aside class="program__side">
-              <div class="program__price-block">
+              <div class="program__price-block program__price-block--featured">
                 <div class="program__price-l">Now at just</div>
                 <div class="program__price-n">₹3,49,999</div>
                 <div class="program__price-sub">12 months &middot; entirely online &middot; high accountability.</div>
@@ -554,6 +620,15 @@
             <div class="testi-card__author">
               <div class="testi-card__name">Arvind Kumar</div>
               <div class="testi-card__role">Serial Entrepreneur</div>
+            </div>
+          </article>
+          <article class="testi-card">
+            <span class="testi-card__avatar" aria-hidden="true">NR</span>
+            <span class="testi-card__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote class="testi-card__quote">&ldquo;The intensive gave me my first 90 days of clarity in years. The mastermind kept me consistent for the next 365.&rdquo;</blockquote>
+            <div class="testi-card__author">
+              <div class="testi-card__name">Nisha Raghavan</div>
+              <div class="testi-card__role">VP People, F500</div>
             </div>
           </article>
         </div>

@@ -13,6 +13,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@400;500&family=Reddit+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <style>
+      /* Book page only — keep yellow shadow stable on hover (no glitch) */
+      .hero__media.hero__media--book,
+      .hero__media.hero__media--book:hover {
+        transform: none;
+        box-shadow: 18px 18px 0 0 var(--signal);
+        transition: none;
+      }
+      @media (max-width: 899px) {
+        .hero__media.hero__media--book,
+        .hero__media.hero__media--book:hover {
+          box-shadow: 12px 12px 0 0 var(--signal);
+        }
+      }
       /* Book page only — wrapped-gift visual */
       .gift-stage {
         position: relative;
@@ -67,7 +80,7 @@
   <body>
     <header class="nav">
       <div class="nav__inner">
-        <a href="index.html" class="logo"><span class="logo__dot" aria-hidden="true"></span><span>Hi! I&rsquo;m sg <span class="logo__wave" aria-hidden="true">👋🏽</span></span></a>
+        <a href="index.html" class="logo"><span class="logo__dot" aria-hidden="true"></span><span>Hi! I&rsquo;m SG <span class="logo__wave" aria-hidden="true">👋🏽</span></span></a>
         <ul class="nav__links">
           <li><a href="index.html" class="nav__link">Home</a></li>
           <li><a href="newsletter.html" class="nav__link">Newsletter</a></li>
@@ -135,7 +148,7 @@
             </div>
           </div>
         </div>
-        <div class="hero__media reveal" style="aspect-ratio: 1 / 1;">
+        <div class="hero__media hero__media--book reveal" style="aspect-ratio: 1 / 1;">
           <!-- Replace this block with: <img src="images/book-wrapped.png" alt="The book, wrapped." /> once the image is generated. -->
           <div class="gift-stage" aria-label="A book wrapped mysteriously, tied with a red ribbon">
             <svg class="gift-stage__svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
