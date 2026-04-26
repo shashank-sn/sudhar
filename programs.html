@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Programs — Sudharsanan Ganapathy</title>
+    <meta
+      name="description"
+      content="Two flagship programs for business owners ready to become brand worthy — the Becoming Known Intensive (2 days) and the Becoming Mastermind (1 year)."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@400;500&family=Reddit+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Programs page only */
+      .program {
+        border: 1px solid var(--rule);
+        border-radius: 28px;
+        background: var(--paper);
+        padding: 48px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+      .program + .program { margin-top: 40px; }
+      .program--dark {
+        background: var(--ink);
+        color: var(--paper);
+        border-color: rgba(255,255,255,0.08);
+      }
+      .program--dark .program__eyebrow,
+      .program--dark .program__price-l,
+      .program--dark .program__incl-l { color: rgba(255,255,255,0.62); }
+      .program--dark .program__line { border-color: rgba(255,255,255,0.12); }
+      .program--dark .program__feature { border-color: rgba(255,255,255,0.12); }
+      @media (min-width: 900px) {
+        .program { grid-template-columns: 1.15fr 1fr; padding: 64px; gap: 64px; align-items: start; }
+      }
+      .program__head { display: flex; flex-direction: column; gap: 18px; }
+      .program__eyebrow {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .program__title {
+        font-size: clamp(34px, 4.4vw, 52px);
+        line-height: 1.02;
+        letter-spacing: -0.025em;
+        font-weight: 800;
+      }
+      .program__deck {
+        font-size: 18px; line-height: 1.65; opacity: 0.85;
+        max-width: 52ch;
+      }
+      .program__features {
+        display: grid;
+        gap: 0;
+        margin-top: 32px;
+      }
+      .program__feature {
+        padding: 22px 0;
+        border-top: 1px solid var(--rule);
+        display: grid;
+        grid-template-columns: 32px 1fr;
+        gap: 16px;
+        align-items: start;
+      }
+      .program__feature:last-child { border-bottom: 1px solid var(--rule); }
+      .program--dark .program__feature:last-child { border-bottom-color: rgba(255,255,255,0.12); }
+      .program__feature-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        opacity: 0.6;
+        padding-top: 4px;
+      }
+      .program__feature-t {
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+      }
+      .program__feature-d {
+        margin-top: 6px;
+        font-size: 15px;
+        line-height: 1.6;
+        opacity: 0.75;
+      }
+      .program__side {
+        position: sticky;
+        top: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .program__price-block {
+        border: 1px solid var(--rule);
+        border-radius: 20px;
+        padding: 28px;
+      }
+      .program--dark .program__price-block { border-color: rgba(255,255,255,0.16); }
+      .program__price-l {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .program__price-n {
+        font-size: clamp(34px, 4.5vw, 48px);
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        margin-top: 8px;
+        line-height: 1;
+      }
+      .program__price-sub {
+        margin-top: 12px;
+        font-size: 14px;
+        opacity: 0.72;
+      }
+      .program__cta {
+        margin-top: 24px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .program__incl {
+        display: grid;
+        gap: 14px;
+      }
+      .program__incl-row {
+        display: grid;
+        grid-template-columns: 18px 1fr;
+        gap: 12px;
+        align-items: start;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+      .program__incl-row svg { margin-top: 4px; flex-shrink: 0; }
+      .program__incl-l {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .program__notfor {
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px dashed var(--rule);
+      }
+      .program--dark .program__notfor { border-top-color: rgba(255,255,255,0.16); }
+      .program__notfor-l {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        opacity: 0.6;
+        margin-bottom: 12px;
+      }
+      .program__notfor ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+      .program__notfor li {
+        font-size: 14px;
+        line-height: 1.55;
+        opacity: 0.75;
+        position: relative;
+        padding-left: 18px;
+      }
+      .program__notfor li::before {
+        content: "—"; position: absolute; left: 0; opacity: 0.5;
+      }
+      .program__pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: var(--signal-soft);
+        color: var(--ink);
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        width: fit-content;
+      }
+      .program--dark .program__pill { background: rgba(255,255,255,0.08); color: var(--paper); }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="nav__inner">
+        <a href="index.html" class="logo"><span class="logo__dot" aria-hidden="true"></span><span>Hi! I&rsquo;m sg <span class="logo__wave" aria-hidden="true">👋🏽</span></span></a>
+        <ul class="nav__links">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="newsletter.html" class="nav__link">Newsletter</a></li>
+          <li><a href="speaking.html" class="nav__link">Speaking</a></li>
+          <li><a href="work-with-me.html" class="nav__link">Work with me</a></li>
+          <li><a href="programs.html" class="nav__link is-active">Programs</a></li>
+          <li><a href="book.html" class="nav__link">Book</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+        <button class="nav__burger" aria-label="Menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__sheet">
+        <div class="nav__sheet-inner">
+          <a href="index.html">Home</a>
+          <a href="newsletter.html">Newsletter</a>
+          <a href="speaking.html">Speaking</a>
+          <a href="work-with-me.html">Work with me</a>
+          <a href="programs.html">Programs</a>
+          <a href="book.html">Book</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero hero--wwm">
+      <div class="hero__inner wrap">
+        <div class="hero--wwm__top">
+          <div class="hero--wwm__text reveal">
+            <div class="eyebrow hero__kicker">Programs</div>
+            <h1 class="display-xxl" style="margin-top: 32px;">
+              Two ways to become brand&nbsp;worthy.
+            </h1>
+          </div>
+          <div class="reveal">
+            <p class="hero__sub" style="margin: 0 0 28px;">
+              A 2-day intensive to get started. A 1-year mastermind for the
+              long game. Both run online. Both are built for people who have
+              already done real work and are ready to be seen for it.
+            </p>
+            <div class="hero__cta-row" style="margin-top: 0;">
+              <a href="#intensive" class="btn btn--signal">
+                Becoming Known &mdash; ₹6,999
+                <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="#mastermind" class="btn btn--ghost">The Becoming Mastermind</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero--wwm__credits reveal">
+          <div>
+            <div class="hero--wwm__credit-n">35K+</div>
+            <div class="hero--wwm__credit-l">Business owners trained</div>
+          </div>
+          <div>
+            <div class="hero--wwm__credit-n">12</div>
+            <div class="hero--wwm__credit-l">Countries</div>
+          </div>
+          <div>
+            <div class="hero--wwm__credit-n">14 yrs</div>
+            <div class="hero--wwm__credit-l">In business</div>
+          </div>
+          <div>
+            <div class="hero--wwm__credit-n">100%</div>
+            <div class="hero--wwm__credit-l">Online</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAM 1: BECOMING KNOWN INTENSIVE -->
+    <section class="services" id="intensive">
+      <div class="wrap">
+        <div class="reveal">
+          <article class="program">
+            <div class="program__head">
+              <span class="program__pill">
+                <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="3" fill="currentColor"/></svg>
+                Program 01 &middot; 2 days
+              </span>
+              <div class="program__eyebrow">The intensive</div>
+              <h2 class="program__title">Becoming Known Intensive</h2>
+              <p class="program__deck">
+                Two days, powerpacked and high-paced. A hands-on workshop on
+                growing into the person worthy of being a brand &mdash;
+                covering identity, intentions, consistency, and how to show up
+                online without losing yourself.
+              </p>
+
+              <div class="program__features">
+                <div class="program__feature">
+                  <span class="program__feature-num">01</span>
+                  <div>
+                    <div class="program__feature-t">Identity Shifting Framework</div>
+                    <p class="program__feature-d">Recentering with yourself so your brand is as authentic as possible.</p>
+                  </div>
+                </div>
+                <div class="program__feature">
+                  <span class="program__feature-num">02</span>
+                  <div>
+                    <div class="program__feature-t">Intentions Setting Framework</div>
+                    <p class="program__feature-d">Knowing why you do what you do &mdash; and aligning everything you do to that why.</p>
+                  </div>
+                </div>
+                <div class="program__feature">
+                  <span class="program__feature-num">03</span>
+                  <div>
+                    <div class="program__feature-t">Consistency Framework</div>
+                    <p class="program__feature-d">How you do anything is how you do everything. The reps that build a brand-worthy life.</p>
+                  </div>
+                </div>
+                <div class="program__feature">
+                  <span class="program__feature-num">04</span>
+                  <div>
+                    <div class="program__feature-t">Social Media Growth Framework</div>
+                    <p class="program__feature-d">What actually works online &mdash; so you can be yourself and still gather an audience that can do business with you.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="program__notfor">
+                <div class="program__notfor-l">Who this is NOT for</div>
+                <ul>
+                  <li>Students.</li>
+                  <li>Anyone with under 10 years of professional experience.</li>
+                  <li>Anyone considering content creation or being an influencer as their career path.</li>
+                </ul>
+              </div>
+
+              <div class="program__notfor" style="border-top: 1px dashed var(--rule); margin-top: 0;">
+                <div class="program__notfor-l">Who this IS for</div>
+                <ul>
+                  <li>Business owners &mdash; size of the business doesn&rsquo;t matter.</li>
+                  <li>C-suite leaders.</li>
+                  <li>Professionals &amp; domain experts.</li>
+                  <li>Freelancers and coaches.</li>
+                </ul>
+              </div>
+            </div>
+
+            <aside class="program__side">
+              <div class="program__price-block">
+                <div class="program__price-l">Now at just</div>
+                <div class="program__price-n">₹6,999</div>
+                <div class="program__price-sub">2 days &middot; entirely online &middot; entirely hands-on.</div>
+                <div class="program__cta">
+                  <a href="https://rzp.io/rzp/MsFb1kVM" target="_blank" rel="noreferrer" class="btn btn--dark">
+                    Reserve my spot
+                    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="program__price-block">
+                <div class="program__price-l">What&rsquo;s included</div>
+                <div class="program__incl" style="margin-top: 16px;">
+                  <div class="program__incl-row">
+                    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>Two full days of live workshops, end-to-end.</span>
+                  </div>
+                  <div class="program__incl-row">
+                    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>The four core frameworks &mdash; identity, intentions, consistency, social.</span>
+                  </div>
+                  <div class="program__incl-row">
+                    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>Worksheets, prompts, and live application throughout the cohort.</span>
+                  </div>
+                  <div class="program__incl-row">
+                    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>A peer cohort of business owners and operators.</span>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAM 2: BECOMING MASTERMIND -->
+    <section class="services" id="mastermind" style="padding-top: 0;">
+      <div class="wrap">
+        <div class="reveal">
+          <article class="program program--dark">
+            <div class="program__head">
+              <span class="program__pill">
+                <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="3" fill="currentColor"/></svg>
+                Program 02 &middot; 1 year
+              </span>
+              <div class="program__eyebrow">The mastermind</div>
+              <h2 class="program__title">The Becoming Mastermind</h2>
+              <p class="program__deck">
+                One year of high-accountability, high-performance work with
+                business owners and operators serious about becoming brand
+                worthy. Three deep-dive masteries, one hundred live sessions, three
+                self-paced tracks, and the systems to make it all stick.
+              </p>
+
+              <div class="program__features">
+                <div class="program__feature">
+                  <span class="program__feature-num">01</span>
+                  <div>
+                    <div class="program__feature-t">Content Creation Mastery</div>
+                    <p class="program__feature-d">2-day deep dive on creating content for impact &mdash; end to end.</p>
+                  </div>
+                </div>
+                <div class="program__feature">
+                  <span class="program__feature-num">02</span>
+                  <div>
+                    <div class="program__feature-t">Content to Commerce Mastery</div>
+                    <p class="program__feature-d">2-day deep dive on making your content make business sense and turn audience into revenue.</p>
+                  </div>
+                </div>
+                <div class="program__feature">
+                  <span class="program__feature-num">03</span>
+                  <div>
+                    <div class="program__feature-t">Identity Shifting Mastery</div>
+                    <p class="program__feature-d">2-day deep dive on becoming the person worthy of being a brand &mdash; and shifting what&rsquo;s holding you back.</p>
+                  </div>
+                </div>
+                <div class="program__feature">
+                  <span class="program__feature-num">04</span>
+                  <div>
+                    <div class="program__feature-t">100 weekly live sessions</div>
+                    <p class="program__feature-d">90-minute live sessions every week of the year. High accountability, high performance.</p>
+                  </div>
+                </div>
+                <div class="program__feature">
+                  <span class="program__feature-num">05</span>
+                  <div>
+                    <div class="program__feature-t">Self-paced learning tracks</div>
+                    <p class="program__feature-d">15 modules across three tracks &mdash; Social Media, Skills, and Mindset.</p>
+                  </div>
+                </div>
+                <div class="program__feature">
+                  <span class="program__feature-num">06</span>
+                  <div>
+                    <div class="program__feature-t">Accountability &amp; habit systems</div>
+                    <p class="program__feature-d">Trackers, rituals, and check-ins that turn intentions into actual reps.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="program__notfor">
+                <div class="program__notfor-l">Who this is for</div>
+                <ul>
+                  <li>Business owners &mdash; any size, any stage.</li>
+                  <li>C-suite leaders, professionals, and domain experts.</li>
+                  <li>Freelancers and coaches building a long-game brand.</li>
+                </ul>
+              </div>
+            </div>
+
+            <aside class="program__side">
+              <div class="program__price-block">
+                <div class="program__price-l">Now at just</div>
+                <div class="program__price-n">₹3,49,999</div>
+                <div class="program__price-sub">12 months &middot; entirely online &middot; high accountability.</div>
+                <div class="program__cta">
+                  <a href="contact.html" class="btn btn--signal">
+                    Apply to join
+                    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="program__price-block">
+                <div class="program__price-l">A year, in numbers</div>
+                <div class="program__incl" style="margin-top: 16px;">
+                  <div class="program__incl-row">
+                    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>3 &times; 2-day mastery workshops.</span>
+                  </div>
+                  <div class="program__incl-row">
+                    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>100 weekly live sessions of 90 minutes each.</span>
+                  </div>
+                  <div class="program__incl-row">
+                    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>15 self-paced modules across three tracks.</span>
+                  </div>
+                  <div class="program__incl-row">
+                    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>Accountability + habit-tracking systems built in.</span>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY THESE PROGRAMS -->
+    <section class="feature feature--cream">
+      <div class="wrap">
+        <div class="feature__grid">
+          <div class="feature__body reveal">
+            <span class="eyebrow">Why these programs</span>
+            <h2 class="display-lg">I don&rsquo;t teach influencing. I teach becoming.</h2>
+            <p class="lede">
+              Most personal branding programs sell tactics. These two are
+              built around the 90% &mdash; the inner-work, the identity, the
+              consistency &mdash; because everything else compounds from
+              there.
+            </p>
+            <p class="lede muted">
+              Built from 14 years of running businesses, 200+ keynotes
+              including TEDx, and the experience of training 35,000+ business
+              owners across 12 countries.
+            </p>
+          </div>
+          <div class="feature__media reveal">
+            <img src="images/on-stage.jpg" alt="Sudharsanan on stage" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testi">
+      <div class="wrap">
+        <div class="testi__header reveal" style="justify-content: center; text-align: center;">
+          <div>
+            <div class="eyebrow">What past participants say</div>
+            <h2 class="display-lg" style="margin-top: 16px; max-width: 22ch; margin-left: auto; margin-right: auto;">
+              Built for people who have already done the&nbsp;work.
+            </h2>
+          </div>
+        </div>
+
+        <div class="testi-cards reveal">
+          <article class="testi-card">
+            <span class="testi-card__avatar" aria-hidden="true">RM</span>
+            <span class="testi-card__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote class="testi-card__quote">&ldquo;Two days reset how I think about showing up online. Inbound tripled in 90 days.&rdquo;</blockquote>
+            <div class="testi-card__author">
+              <div class="testi-card__name">Rohan Mehta</div>
+              <div class="testi-card__role">Founder, B2B SaaS</div>
+            </div>
+          </article>
+          <article class="testi-card">
+            <span class="testi-card__avatar" aria-hidden="true">PN</span>
+            <span class="testi-card__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote class="testi-card__quote">&ldquo;The mastermind is the only place I&rsquo;ve been held accountable in a way that actually moved business numbers.&rdquo;</blockquote>
+            <div class="testi-card__author">
+              <div class="testi-card__name">Priya Narayan</div>
+              <div class="testi-card__role">CXO, Fintech</div>
+            </div>
+          </article>
+          <article class="testi-card">
+            <span class="testi-card__avatar" aria-hidden="true">AK</span>
+            <span class="testi-card__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote class="testi-card__quote">&ldquo;No formulas. He sharpens your point of view until it cuts through.&rdquo;</blockquote>
+            <div class="testi-card__author">
+              <div class="testi-card__name">Arvind Kumar</div>
+              <div class="testi-card__role">Serial Entrepreneur</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__grid">
+          <div class="footer__col">
+            <span class="eyebrow">Let&rsquo;s work together</span>
+            <h3>Become a brand worthy person.</h3>
+            <a class="footer__email" href="mailto:hello@sudharsananganapathy.com">hello@sudharsananganapathy.com</a>
+          </div>
+          <div class="footer__col">
+            <span class="eyebrow">Site</span>
+            <ul>
+              <li><a href="newsletter.html">Newsletter</a></li>
+              <li><a href="speaking.html">Speaking</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="book.html">Book</a></li>
+              <li><a href="work-with-me.html">Work with me</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <span class="eyebrow">Follow</span>
+            <ul>
+              <li><a href="https://www.linkedin.com/in/sudharsananganapathy/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+              <li><a href="https://www.instagram.com/sudharsananganapathy/" target="_blank" rel="noreferrer">Instagram</a></li>
+              <li><a href="https://www.youtube.com/@sudharsananganapathy" target="_blank" rel="noreferrer">YouTube</a></li>
+              <li><a href="https://x.com/sudharhere/" target="_blank" rel="noreferrer">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div>&copy; <span id="y"></span> SGI Collective &middot; Sudharsanan Ganapathy Innovations LLP &middot; Chennai, India.</div>
+          <nav>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="refund.html">Refund &amp; Cancellation</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+    <script src="script.js"></script>
+  </body>
+</html>

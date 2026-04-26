@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Book — Sudharsanan Ganapathy</title>
+    <meta
+      name="description"
+      content="Zero bullshit guide to personal branding — the book. Personal branding is 90% personal, 10% branding. This is the book about the 90%."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@400;500&family=Reddit+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Book page only — wrapped-gift visual */
+      .gift-stage {
+        position: relative;
+        aspect-ratio: 1 / 1;
+        max-width: 560px;
+        margin: 0 auto;
+        background: #f4f4f2;
+        border-radius: 28px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 30px 60px -30px rgba(0,0,0,0.18);
+      }
+      .gift-stage__photo {
+        position: absolute; inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+      }
+      .gift-stage__svg {
+        width: 76%;
+        filter: drop-shadow(0 28px 28px rgba(0,0,0,0.18));
+        transform: rotate(-8deg);
+      }
+      .book-bullets {
+        display: grid;
+        gap: 20px;
+        margin-top: 32px;
+      }
+      .book-bullet {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 16px;
+        align-items: start;
+      }
+      .book-bullet__num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+        padding-top: 4px;
+      }
+      .book-bullet__text {
+        font-size: 17px;
+        line-height: 1.7;
+        color: var(--ink);
+      }
+      .book-bullet__text strong { font-weight: 700; }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="nav__inner">
+        <a href="index.html" class="logo"><span class="logo__dot" aria-hidden="true"></span><span>Hi! I&rsquo;m sg <span class="logo__wave" aria-hidden="true">👋🏽</span></span></a>
+        <ul class="nav__links">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="newsletter.html" class="nav__link">Newsletter</a></li>
+          <li><a href="speaking.html" class="nav__link">Speaking</a></li>
+          <li><a href="work-with-me.html" class="nav__link">Work with me</a></li>
+          <li><a href="programs.html" class="nav__link">Programs</a></li>
+          <li><a href="book.html" class="nav__link is-active">Book</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+        <button class="nav__burger" aria-label="Menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__sheet">
+        <div class="nav__sheet-inner">
+          <a href="index.html">Home</a>
+          <a href="newsletter.html">Newsletter</a>
+          <a href="speaking.html">Speaking</a>
+          <a href="work-with-me.html">Work with me</a>
+          <a href="programs.html">Programs</a>
+          <a href="book.html">Book</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="hero__text reveal">
+          <div class="eyebrow hero__kicker">The book &mdash; coming 2026</div>
+          <h1 class="display-xxl">A zero bullshit guide to personal&nbsp;branding.</h1>
+          <p class="hero__sub">
+            Personal branding is 90% personal and 10% branding. Most books
+            obsess over the 10%. This one is about the 90% &mdash; the work
+            you put in before the world ever sees a thing.
+          </p>
+          <div class="hero__cta-row">
+            <a href="#preorder" class="btn btn--signal">
+              Pre-order the book
+              <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#what-its-about" class="btn btn--ghost">What it&rsquo;s about</a>
+          </div>
+
+          <div class="hero__values">
+            <div class="hero__value">
+              <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 5h12M3 9h9M3 13h7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <div>
+                <p class="hero__value-t">Built on real work</p>
+                <p class="hero__value-d">Frameworks tested with 500+ business leaders across 12 countries.</p>
+              </div>
+            </div>
+            <div class="hero__value">
+              <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M9 5v4l3 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+              <div>
+                <p class="hero__value-t">Inner-work first</p>
+                <p class="hero__value-d">Becoming brand worthy before building the brand.</p>
+              </div>
+            </div>
+            <div class="hero__value">
+              <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 6l6 5 6-5M3 6v7h12V6" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/></svg>
+              <div>
+                <p class="hero__value-t">Early reader access</p>
+                <p class="hero__value-d">Pre-order to get drafts, margin notes, and a hand in the final cut.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero__media reveal" style="aspect-ratio: 1 / 1;">
+          <!-- Replace this block with: <img src="images/book-wrapped.png" alt="The book, wrapped." /> once the image is generated. -->
+          <div class="gift-stage" aria-label="A book wrapped mysteriously, tied with a red ribbon">
+            <svg class="gift-stage__svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+                  <line x1="0" y1="11" x2="14" y2="11" stroke="#f7c8d4" stroke-width="2.4" stroke-linecap="round"/>
+                </pattern>
+                <linearGradient id="ribbonShade" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#dc2235"/>
+                  <stop offset="1" stop-color="#a91325"/>
+                </linearGradient>
+              </defs>
+              <!-- box body -->
+              <rect x="60" y="40" width="280" height="320" rx="6" fill="#ffffff"/>
+              <rect x="60" y="40" width="280" height="320" rx="6" fill="url(#dots)" opacity="0.85"/>
+              <!-- box edge shadow -->
+              <rect x="60" y="40" width="280" height="320" rx="6" fill="none" stroke="#e8e6e2" stroke-width="2"/>
+              <!-- ribbon vertical -->
+              <rect x="180" y="40" width="40" height="320" fill="url(#ribbonShade)"/>
+              <!-- ribbon horizontal -->
+              <rect x="60" y="170" width="280" height="40" fill="url(#ribbonShade)"/>
+              <!-- bow -->
+              <g transform="translate(200 190)">
+                <path d="M0 0 C -60 -50, -90 -10, -50 10 C -90 30, -60 70, 0 20 Z" fill="url(#ribbonShade)"/>
+                <path d="M0 0 C 60 -50, 90 -10, 50 10 C 90 30, 60 70, 0 20 Z" fill="url(#ribbonShade)"/>
+                <ellipse cx="0" cy="10" rx="14" ry="18" fill="#a91325"/>
+                <!-- ribbon tails -->
+                <path d="M -10 22 C -22 60, -36 80, -50 92 L -28 96 C -18 80, -8 56, -2 32 Z" fill="url(#ribbonShade)"/>
+                <path d="M 10 22 C 22 60, 36 80, 50 92 L 28 96 C 18 80, 8 56, 2 32 Z" fill="url(#ribbonShade)"/>
+              </g>
+              <!-- subtle title placeholder -->
+              <g opacity="0.55" transform="translate(200 130)">
+                <rect x="-58" y="-38" width="116" height="76" rx="6" fill="none" stroke="#f1a9b8" stroke-width="2" stroke-dasharray="4 4"/>
+                <text x="0" y="-6" text-anchor="middle" font-family="Reddit Sans, system-ui, sans-serif" font-weight="700" font-size="14" fill="#dc2235" letter-spacing="0.04em">PLACE</text>
+                <text x="0" y="14" text-anchor="middle" font-family="Reddit Sans, system-ui, sans-serif" font-weight="700" font-size="14" fill="#dc2235" letter-spacing="0.04em">HERE</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT THE BOOK IS ABOUT -->
+    <section class="feature" id="what-its-about">
+      <div class="wrap">
+        <div class="feature__grid">
+          <div class="feature__body reveal">
+            <span class="eyebrow">What it&rsquo;s about</span>
+            <h2 class="display-lg">You can&rsquo;t document what doesn&rsquo;t exist.</h2>
+            <p class="lede">
+              Most personal branding advice teaches you how to talk about the
+              work. This book is about doing the work that&rsquo;s worth talking
+              about &mdash; the inner-work, the identity shifts, the daily
+              practice that makes a person worthy of being a brand.
+            </p>
+            <p class="lede muted">
+              Written from 14 years of building businesses, training 35,000+
+              entrepreneurs across 12 countries, and 200+ keynotes including TEDx.
+            </p>
+          </div>
+          <div class="feature__media reveal">
+            <img src="images/portrait-studio.jpg" alt="Sudharsanan Ganapathy" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSIDE THE BOOK -->
+    <section class="topic-index">
+      <div class="wrap">
+        <div class="topic-index__header reveal">
+          <div>
+            <div class="eyebrow">Inside the book</div>
+            <h2 class="display-lg" style="margin-top: 20px; max-width: 16ch;">
+              The frameworks. The reps. The why.
+            </h2>
+          </div>
+          <p class="topic-index__intro">
+            Each chapter is built around a framework that has worked in the
+            field &mdash; in cohorts, intensives, and 1:1 engagements with
+            founders, CXOs, coaches, and operators.
+          </p>
+        </div>
+
+        <div class="topic-index__list reveal">
+          <a href="#preorder" class="topic-index__row">
+            <span class="topic-index__num">01 &mdash;</span>
+            <h3 class="topic-index__name">Identity Shifting</h3>
+            <span class="topic-index__blurb">
+              Recentering with yourself, so what you put out is the most
+              authentic version of you.
+            </span>
+            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#preorder" class="topic-index__row">
+            <span class="topic-index__num">02 &mdash;</span>
+            <h3 class="topic-index__name">Intentions</h3>
+            <span class="topic-index__blurb">
+              Knowing why you do what you do &mdash; and aligning everything
+              you build to that why.
+            </span>
+            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#preorder" class="topic-index__row">
+            <span class="topic-index__num">03 &mdash;</span>
+            <h3 class="topic-index__name">Consistency</h3>
+            <span class="topic-index__blurb">
+              How you do anything is how you do everything. The compounding
+              math of small reps done in public.
+            </span>
+            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#preorder" class="topic-index__row">
+            <span class="topic-index__num">04 &mdash;</span>
+            <h3 class="topic-index__name">Positioning</h3>
+            <span class="topic-index__blurb">
+              Building mental real-estate in your audience&rsquo;s mind &mdash;
+              for exactly the work you do.
+            </span>
+            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#preorder" class="topic-index__row">
+            <span class="topic-index__num">05 &mdash;</span>
+            <h3 class="topic-index__name">Visibility</h3>
+            <span class="topic-index__blurb">
+              How to be yourself online and still gather the audience that can
+              do business with you.
+            </span>
+            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#preorder" class="topic-index__row">
+            <span class="topic-index__num">06 &mdash;</span>
+            <h3 class="topic-index__name">Content to Commerce</h3>
+            <span class="topic-index__blurb">
+              Making your audience make business sense &mdash; without
+              hard-selling, ever.
+            </span>
+            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO IT IS FOR -->
+    <section class="feature feature--cream">
+      <div class="wrap">
+        <div class="feature__grid feature__grid--flip">
+          <div class="feature__body reveal">
+            <span class="eyebrow">Who it&rsquo;s for</span>
+            <h2 class="display-lg">For the people who&rsquo;ve done the work &mdash; quietly &mdash; for years.</h2>
+            <div class="book-bullets">
+              <div class="book-bullet">
+                <span class="book-bullet__num">01</span>
+                <p class="book-bullet__text"><strong>Business owners</strong> &mdash; size of the business doesn&rsquo;t matter, the seriousness of the work does.</p>
+              </div>
+              <div class="book-bullet">
+                <span class="book-bullet__num">02</span>
+                <p class="book-bullet__text"><strong>C-suite leaders</strong> who want to be known for the company they keep.</p>
+              </div>
+              <div class="book-bullet">
+                <span class="book-bullet__num">03</span>
+                <p class="book-bullet__text"><strong>Professionals &amp; domain experts</strong> with 10+ years of real-world reps.</p>
+              </div>
+              <div class="book-bullet">
+                <span class="book-bullet__num">04</span>
+                <p class="book-bullet__text"><strong>Coaches &amp; freelancers</strong> ready to stop performing and start practicing.</p>
+              </div>
+            </div>
+          </div>
+          <div class="feature__media reveal">
+            <img src="images/cafe-portrait.jpg" alt="Sudharsanan working" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRE-ORDER CTA -->
+    <section class="nl-banner" id="preorder">
+      <div class="wrap">
+        <div class="nl-banner__grid">
+          <div class="reveal">
+            <span class="eyebrow" style="color: var(--ink); opacity: 0.7;">Pre-order</span>
+            <h2 class="display-xl" style="margin-top: 20px;">
+              Be among the first&nbsp;readers.
+            </h2>
+            <p class="nl-small" style="margin-top: 20px;">
+              Drop your email. We&rsquo;ll send you the pre-order link the
+              moment it goes live, plus the first chapter as soon as it&rsquo;s
+              ready.
+            </p>
+          </div>
+          <div class="reveal">
+            <form class="nl-form">
+              <input type="email" placeholder="your@email.com" aria-label="Email" required />
+              <button type="submit">
+                Notify me
+                <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </form>
+            <p class="nl-small">
+              No spam. One email when the book is ready, one when the
+              pre-order opens. That&rsquo;s it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__grid">
+          <div class="footer__col">
+            <span class="eyebrow">Let&rsquo;s work together</span>
+            <h3>Become a brand worthy person.</h3>
+            <a class="footer__email" href="mailto:hello@sudharsananganapathy.com">hello@sudharsananganapathy.com</a>
+          </div>
+          <div class="footer__col">
+            <span class="eyebrow">Site</span>
+            <ul>
+              <li><a href="newsletter.html">Newsletter</a></li>
+              <li><a href="speaking.html">Speaking</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="book.html">Book</a></li>
+              <li><a href="work-with-me.html">Work with me</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <span class="eyebrow">Follow</span>
+            <ul>
+              <li><a href="https://www.linkedin.com/in/sudharsananganapathy/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+              <li><a href="https://www.instagram.com/sudharsananganapathy/" target="_blank" rel="noreferrer">Instagram</a></li>
+              <li><a href="https://www.youtube.com/@sudharsananganapathy" target="_blank" rel="noreferrer">YouTube</a></li>
+              <li><a href="https://x.com/sudharhere/" target="_blank" rel="noreferrer">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div>&copy; <span id="y"></span> SGI Collective &middot; Sudharsanan Ganapathy Innovations LLP &middot; Chennai, India.</div>
+          <nav>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="refund.html">Refund &amp; Cancellation</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+    <script src="script.js"></script>
+  </body>
+</html>
