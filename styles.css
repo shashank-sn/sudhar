@@ -235,6 +235,16 @@ button {
   100% { transform: rotate(0deg); }
 }
 
+.logo__text {
+  display: none;
+}
+
+.logo__sig {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
 .nav__links {
   display: none;
   align-items: center;
