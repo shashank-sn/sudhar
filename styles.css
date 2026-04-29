@@ -240,9 +240,17 @@ button {
 }
 
 .logo__sig {
-  height: 192px;
+  height: 120px;
   width: auto;
   display: block;
+  margin-left: -8px;
+}
+
+@media (min-width: 768px) {
+  .logo__sig {
+    height: 192px;
+    margin-left: -16px;
+  }
 }
 
 .nav__links {
