@@ -3024,52 +3024,6 @@ body:has(.hero-stage) .nav .logo__dot {
   }
 }
 
-@media (max-width: 767px) {
-  .hero-stage__sub {
-    font-size: clamp(15px, 1.5vw, 19px);
-  }
-
-  .hero__sub {
-    font-size: clamp(14px, 1vw, 16px);
-  }
-
-  .lede {
-    font-size: clamp(14px, 1vw, 15px);
-  }
-
-  .invite-cta__sub {
-    font-size: 17px;
-  }
-
-  .topic-index__intro,
-  .services__body,
-  .legal__contact p {
-    font-size: 14px;
-  }
-
-  .topics__body,
-  .backstory__body,
-  .legal__body p,
-  .legal__body ul li {
-    font-size: 15px;
-  }
-
-  .legal__intro {
-    font-size: clamp(16px, 1.4vw, 19px);
-  }
-
-  .bio__header p {
-    font-size: 16px;
-  }
-
-  .topic-index__blurb,
-  .scroller__tile p,
-  .hero__value-d,
-  .nl-small {
-    font-size: 12px;
-  }
-}
-
 /* Newsletter value strip: stack on small mobile */
 @media (max-width: 599px) {
   .hero__values {
@@ -3483,6 +3437,30 @@ body.home-editorial[data-theme="light"] .theme-toggle__sun {
   line-height: 1.6;
   color: var(--ed-muted);
   margin: 18px 0 0;
+}
+
+@media (max-width: 767px) {
+  body.home-editorial .ed-section-lede,
+  body.home-editorial .ed-large-line {
+    font-size: clamp(39px, 8vw, 71px);
+  }
+
+  body.home-editorial .ed-hero p,
+  body.home-editorial .ed-copy-stack p {
+    font-size: clamp(24px, 4vw, 35px);
+  }
+
+  body.home-editorial .ed-hero .ed-kicker {
+    font-size: clamp(10px, 1.4vw, 12px);
+  }
+
+  body.home-editorial .ed-muted-copy {
+    font-size: 17px;
+  }
+
+  body.home-editorial .ed-small {
+    font-size: 11px;
+  }
 }
 
 .ed-form {
