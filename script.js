@@ -1,6 +1,63 @@
 // Minimal interactions: scroll-state nav, reveal-on-view, mobile menu, form UX, scroller controls
 
 (() => {
+  // --- Homepage light/dark theme toggle ---
+  const home = document.body.classList.contains("home-editorial")
+    ? document.body
+    : null;
+  const themeToggle = document.querySelector(".theme-toggle");
+  if (home && themeToggle) {
+    const storedTheme = localStorage.getItem("sgi-home-theme");
+    const preferredTheme = storedTheme || "light";
+
+    const setTheme = (theme) => {
+      const next = theme === "light" ? "light" : "dark";
+      home.dataset.theme = next;
+      themeToggle.setAttribute("aria-pressed", String(next === "light"));
+      themeToggle.setAttribute(
+        "aria-label",
+        next === "light" ? "Switch to dark mode" : "Switch to light mode"
+      );
+      localStorage.setItem("sgi-home-theme", next);
+    };
+
+    setTheme(preferredTheme);
+    themeToggle.addEventListener("click", () => {
+      setTheme(home.dataset.theme === "light" ? "dark" : "light");
+    });
+  }
+
+  // --- Homepage mobile menu ---
+  const editorialNav = document.querySelector(".ed-nav");
+  const editorialMenuToggle = document.querySelector(".ed-menu-toggle");
+  const editorialMenu = document.querySelector("#ed-site-menu");
+  if (editorialNav && editorialMenuToggle && editorialMenu) {
+    const closeEditorialMenu = () => {
+      editorialNav.classList.remove("is-menu-open");
+      editorialMenuToggle.setAttribute("aria-expanded", "false");
+      editorialMenuToggle.setAttribute("aria-label", "Open menu");
+    };
+
+    editorialMenuToggle.addEventListener("click", () => {
+      const open = !editorialNav.classList.contains("is-menu-open");
+      editorialNav.classList.toggle("is-menu-open", open);
+      editorialMenuToggle.setAttribute("aria-expanded", String(open));
+      editorialMenuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+
+    editorialMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeEditorialMenu);
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeEditorialMenu();
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 760) closeEditorialMenu();
+    });
+  }
+
   // --- Nav scroll state + mobile toggle ---
   const nav = document.querySelector(".nav");
   const burger = document.querySelector(".nav__burger");
@@ -11,8 +68,11 @@
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     if (burger) {
+      burger.setAttribute("aria-expanded", "false");
       burger.addEventListener("click", () => {
         const open = nav.classList.toggle("is-open");
+        burger.setAttribute("aria-expanded", String(open));
+        burger.setAttribute("aria-label", open ? "Close menu" : "Menu");
         document.documentElement.style.overflow = open ? "hidden" : "";
       });
     }
