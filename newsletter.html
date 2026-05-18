@@ -4,210 +4,118 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Newsletter | Sudharsanan Ganapathy</title>
-    <meta
-      name="description"
-      content="The letter 20,000+ business owners read before they start their work week. One email. Every Saturday. 30,000 readers."
-    />
+    <meta name="description" content="The letter 20,000+ business owners read before they start their work week. One email. Every Saturday. 30,000 readers." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@400;500&family=Reddit+Sans:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://mattrothenberg.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@400;500&family=Reddit+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <header class="nav">
-      <div class="nav__inner">
-        <a href="index.html" class="logo">
-          <span class="logo__text">
-            <span class="logo__dot" aria-hidden="true"></span>
-            <span>Hi! I&rsquo;m SG <span class="logo__wave" aria-hidden="true">👋🏽</span></span>
-          </span>
-          <img src="images/signature-white.png" class="logo__sig" alt="Sudharsanan Ganapathy" />
-        </a>
-        <ul class="nav__links">
-          <li><a href="index.html" class="nav__link">Home</a></li>
-          <li><a href="newsletter.html" class="nav__link is-active">Newsletter</a></li>
-          <li><a href="speaking.html" class="nav__link">Speaking</a></li>
-          <li><a href="programs.html" class="nav__link">Programs</a></li>
-          <li><a href="book.html" class="nav__link">Book</a></li>
-          <li><a href="contact.html" class="nav__link">Contact</a></li>
-        </ul>
-        <button class="nav__burger" aria-label="Menu"><span></span><span></span></button>
-      </div>
-      <div class="nav__sheet">
-        <div class="nav__sheet-inner">
-          <a href="index.html">Home</a>
-          <a href="newsletter.html">Newsletter</a>
-          <a href="speaking.html">Speaking</a>
-          <a href="programs.html">Programs</a>
-          <a href="book.html">Book</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
+  <body class="home-editorial" data-theme="light">
+    <header class="ed-nav" aria-label="Primary navigation">
+      <a href="index.html" class="ed-logo">
+        <span class="logo__text">
+          <span class="logo__dot" aria-hidden="true"></span>
+          <span>Hi! I&rsquo;m SG <span class="logo__wave" aria-hidden="true">👋🏽</span></span>
+        </span>
+        <img src="images/signature-white.png" class="ed-logo__sig ed-logo__sig--dark" alt="Sudharsanan Ganapathy" />
+        <img src="images/signature-black.png" class="ed-logo__sig ed-logo__sig--light" alt="" aria-hidden="true" />
+      </a>
+
+      <nav class="ed-links" id="ed-site-menu" aria-label="Site">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="newsletter.html" aria-current="page">Newsletter</a>
+        <span>/</span>
+        <a href="speaking.html">Speaking</a>
+        <span>/</span>
+        <a href="programs.html">Programs</a>
+        <span>/</span>
+        <a href="book.html">Book</a>
+        <span>/</span>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="true">
+        <span class="theme-toggle__sun" aria-hidden="true"></span>
+        <span class="theme-toggle__moon" aria-hidden="true"></span>
+      </button>
+
+      <button class="ed-menu-toggle" type="button" aria-label="Open menu" aria-controls="ed-site-menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero__inner">
-        <div class="hero__text reveal">
-          <div class="eyebrow hero__kicker">The newsletter</div>
-          <h1 class="display-xxl">The letter 20,000+ business owners read before they start their work&nbsp;week.</h1>
-          <p class="hero__sub">
-            Short, non-obvious takes on personal growth, leadership,
-            positioning, and the long game of visibility. Written in the
-            margins of client work, speaking travel, and the experience of
-            working with 500+ entrepreneurs.
-          </p>
-          <div class="hero__cta-row">
-            <form class="nl-form" style="max-width: 420px; width: 100%;">
-              <input type="email" placeholder="your@email.com" aria-label="Email" required />
-              <button type="submit">
-                Sign up now
-                <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-            </form>
-          </div>
+    <main class="ed-page">
+      <section class="ed-hero ed-hero--page" aria-labelledby="page-title">
+        <p class="ed-kicker">The newsletter</p>
+        <h1 id="page-title">The letter 20,000+ business owners read before they start their work&nbsp;week.</h1>
+        <p>Short, non-obvious takes on personal growth, leadership, positioning, and the long game of visibility. Written in the margins of client work, speaking travel, and the experience of working with 500+ entrepreneurs.</p>
+        <div class="ed-actions"><a href="#signup" class="ed-pill">Join 30,000+ readers</a></div>
+      </section>
 
-          <div class="hero__values">
-            <div class="hero__value">
-              <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 5h12M3 9h9M3 13h7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-              <div>
-                <p class="hero__value-t">Sharp essays</p>
-                <p class="hero__value-d">Non-obvious takes on growth, leadership, and becoming brand worthy.</p>
-              </div>
-            </div>
-            <div class="hero__value">
-              <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M9 5v4l3 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
-              <div>
-                <p class="hero__value-t">Every Saturday</p>
-                <p class="hero__value-d">One email. Written in the margins of real work.</p>
-              </div>
-            </div>
-            <div class="hero__value">
-              <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 6l6 5 6-5M3 6v7h12V6" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/></svg>
-              <div>
-                <p class="hero__value-t">Free, no spam</p>
-                <p class="hero__value-d">One-click unsubscribe, any time. High quality is the only deal.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="hero__media reveal">
-          <img src="images/at-desk.jpg" alt="Sudharsanan Ganapathy at his desk" />
-          <div class="hero__badge">30,000+ weekly readers</div>
-        </div>
-      </div>
-    </section>
+      <section class="ed-photo-block" aria-label="Writing desk">
+        <figure class="ed-photo">
+          <img src="images/at-desk.jpg" alt="Sudharsanan Ganapathy at his desk" loading="eager" />
+          <figcaption>One email every Saturday. No spam. One-click unsubscribe.</figcaption>
+        </figure>
+      </section>
 
-    <!-- SAMPLE ISSUES -->
-    <section class="episodes">
-      <div class="wrap">
-        <div class="episodes__header reveal">
-          <div>
-            <div class="eyebrow">Past issues</div>
-            <h2 class="display-lg" style="margin-top: 16px;">A few issues readers loved.</h2>
-          </div>
+      <section class="ed-section" aria-labelledby="issues-title">
+        <h2 id="issues-title" class="ed-section-title">Past issues <sup>01</sup></h2>
+        <p class="ed-section-lede">A few issues readers loved.</p>
+        <div class="ed-index-list">
+          <a href="#signup" class="ed-index-row"><span>On Personal Branding</span><strong>Why becoming brand worthy matters more than building the brand.</strong><em>7 min read</em></a>
+          <a href="#signup" class="ed-index-row"><span>On Identity</span><strong>The work happens in private. The brand shows up in public.</strong><em>5 min read</em></a>
+          <a href="#signup" class="ed-index-row"><span>On Inner-work</span><strong>One identity shift is all it takes. Here is how mine happened.</strong><em>6 min read</em></a>
+          <a href="#signup" class="ed-index-row"><span>On Entrepreneurship</span><strong>If your content doesn&rsquo;t make business sense, it&rsquo;s noise.</strong><em>8 min read</em></a>
         </div>
-        <div class="episodes__grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-          <article class="episode reveal">
-            <div class="episode__media" style="background: var(--signal-soft);">
-              <div class="episode__num">No. 042</div>
-              <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:30px;letter-spacing:-0.04em;color:var(--ink);padding:24px;text-align:center;line-height:0.95;">become<br/>brand<br/>worthy.</div>
-            </div>
-            <div class="episode__body">
-              <div class="episode__kicker">On Personal Branding</div>
-              <h3 class="episode__title">Why becoming brand worthy matters more than building the brand.</h3>
-              <div class="episode__meta">7 min · 12,400 reads</div>
-            </div>
-          </article>
-          <article class="episode reveal">
-            <div class="episode__media" style="background: var(--cream);">
-              <div class="episode__num">No. 041</div>
-              <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:26px;letter-spacing:-0.035em;color:var(--ink);padding:24px;text-align:center;line-height:1;">90%<br/>personal,<br/>10% brand.</div>
-            </div>
-            <div class="episode__body">
-              <div class="episode__kicker">On Identity</div>
-              <h3 class="episode__title">The work happens in private. The brand shows up in public.</h3>
-              <div class="episode__meta">5 min · 9,800 reads</div>
-            </div>
-          </article>
-          <article class="episode reveal">
-            <div class="episode__media" style="background: var(--ink);">
-              <div class="episode__num">No. 040</div>
-              <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:30px;letter-spacing:-0.035em;color:var(--paper);padding:24px;text-align:center;line-height:1;">identity<br/><span style="color:var(--signal)">shifts first.</span></div>
-            </div>
-            <div class="episode__body">
-              <div class="episode__kicker">On Inner-work</div>
-              <h3 class="episode__title">One identity shift is all it takes. Here is how mine happened.</h3>
-              <div class="episode__meta">6 min · 14,200 reads</div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- NEWSLETTER BANNER -->
-    <section class="nl-banner">
-      <div class="wrap">
-        <div class="nl-banner__grid">
-          <div class="reveal">
-            <span class="eyebrow" style="color: var(--ink); opacity: 0.7;">Join now</span>
-            <h2 class="display-xl" style="margin-top: 20px;">One&nbsp;email. <br/>Every&nbsp;Saturday. <br/>30,000 readers.</h2>
-          </div>
-          <div class="reveal">
-            <form class="nl-form">
-              <input type="email" placeholder="your@email.com" aria-label="Email" required />
-              <button type="submit">
-                Sign up now
-                <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-            </form>
-            <p class="nl-small">Insights on personal growth, leadership, positioning, and the long game of visibility. For free. High quality is the only deal.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      <section class="ed-section" id="signup" aria-labelledby="signup-title">
+        <h2 id="signup-title" class="ed-section-title">Join now <sup>02</sup></h2>
+        <p class="ed-section-lede">One email. Every Saturday. 30,000 readers.</p>
+        <form class="ed-form nl-form">
+          <input type="email" placeholder="your@email.com" aria-label="Email" required />
+          <button type="submit">Sign up now</button>
+        </form>
+        <p class="ed-small">Insights on personal growth, leadership, positioning, and the long game of visibility. For free. High quality is the only deal.</p>
+      </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer__inner">
-        <div class="footer__grid">
-          <div class="footer__col">
-            <span class="eyebrow">Let&rsquo;s work together</span>
-            <h3>Become a brand worthy person.</h3>
-            <a class="footer__email" href="mailto:hello@sudharsananganapathy.com">hello@sudharsananganapathy.com</a>
-          </div>
-          <div class="footer__col">
-            <span class="eyebrow">Site</span>
-            <ul>
-              <li><a href="newsletter.html">Newsletter</a></li>
-              <li><a href="speaking.html">Speaking</a></li>
-              <li><a href="programs.html">Programs</a></li>
-              <li><a href="book.html">Book</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer__col">
-            <span class="eyebrow">Follow</span>
-            <ul>
-              <li><a href="https://www.linkedin.com/in/sudharsananganapathy/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-              <li><a href="https://www.instagram.com/sudharsananganapathy/" target="_blank" rel="noreferrer">Instagram</a></li>
-              <li><a href="https://www.youtube.com/@sudharsananganapathy" target="_blank" rel="noreferrer">YouTube</a></li>
-            </ul>
-          </div>
+      <section class="ed-section" aria-labelledby="work-title">
+        <h2 id="work-title" class="ed-section-title">Let&rsquo;s work together <sup>03</sup></h2>
+        <p class="ed-section-lede">Become a brand worthy person.</p>
+        <div class="ed-socials">
+          <a class="ed-social-pill" href="mailto:hello@sudharsananganapathy.com">
+            <img class="ed-social-pill__icon ed-social-pill__icon--mono" src="images/social/email.svg" alt="" aria-hidden="true" />
+            <span>hello@sudharsananganapathy.com</span>
+          </a>
+          <a class="ed-social-pill" href="https://www.linkedin.com/in/sudharsananganapathy/" target="_blank" rel="noreferrer">
+            <img class="ed-social-pill__icon" src="images/social/linkedin.png" alt="" aria-hidden="true" />
+            <span>LinkedIn</span>
+          </a>
+          <a class="ed-social-pill" href="https://www.instagram.com/sudharsananganapathy/" target="_blank" rel="noreferrer">
+            <img class="ed-social-pill__icon" src="images/social/instagram.png" alt="" aria-hidden="true" />
+            <span>Instagram</span>
+          </a>
+          <a class="ed-social-pill" href="https://www.youtube.com/@sudharsananganapathy" target="_blank" rel="noreferrer">
+            <img class="ed-social-pill__icon" src="images/social/youtube.png" alt="" aria-hidden="true" />
+            <span>YouTube</span>
+          </a>
         </div>
-        <div class="footer__bottom">
-          <div>&copy; <span id="y"></span> SGI Collective.</div>
-          <nav>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="refund.html">Refund &amp; Cancellation</a>
-          </nav>
+      </section>
+
+      <footer class="ed-footer">
+        <div class="ed-legal">
+          <span>&copy; <span id="y"></span> SGI Collective.</span>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="refund.html">Refund &amp; Cancellation</a>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </main>
+
     <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
     <script src="script.js"></script>
   </body>

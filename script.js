@@ -54,7 +54,7 @@
     });
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 760) closeEditorialMenu();
+      if (window.innerWidth > 900) closeEditorialMenu();
     });
   }
 
@@ -115,7 +115,10 @@
       e.preventDefault();
       form.classList.add("is-hidden");
       const succ = form.parentElement?.querySelector(".form-success");
-      if (succ) succ.classList.add("is-on");
+      if (succ) {
+        succ.hidden = false;
+        succ.classList.add("is-on");
+      }
     });
   });
 

@@ -10,513 +10,198 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://mattrothenberg.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@400;500&family=Reddit+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <!-- NAV -->
-    <header class="nav">
-      <div class="nav__inner">
-        <a href="index.html" class="logo">
-          <span class="logo__text">
-            <span class="logo__dot" aria-hidden="true"></span>
-            <span>Hi! I&rsquo;m SG <span class="logo__wave" aria-hidden="true">👋🏽</span></span>
-          </span>
-          <img src="images/signature-black.png" class="logo__sig" alt="Sudharsanan Ganapathy" />
-        </a>
-        <ul class="nav__links">
-          <li><a href="index.html" class="nav__link is-active">Home</a></li>
-          <li><a href="newsletter.html" class="nav__link">Newsletter</a></li>
-          <li><a href="speaking.html" class="nav__link">Speaking</a></li>
-          <li><a href="programs.html" class="nav__link">Programs</a></li>
-          <li><a href="book.html" class="nav__link">Book</a></li>
-          <li><a href="contact.html" class="nav__link">Contact</a></li>
-        </ul>
-        <button class="nav__burger" aria-label="Menu">
-          <span></span><span></span>
-        </button>
-      </div>
-      <div class="nav__sheet">
-        <div class="nav__sheet-inner">
-          <a href="index.html">Home</a>
-          <a href="newsletter.html">Newsletter</a>
-          <a href="speaking.html">Speaking</a>
-          <a href="programs.html">Programs</a>
-          <a href="book.html">Book</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
+  <body class="home-editorial" data-theme="light">
+    <header class="ed-nav" aria-label="Primary navigation">
+      <a href="index.html" class="ed-logo">
+        <span class="logo__text">
+          <span class="logo__dot" aria-hidden="true"></span>
+          <span>Hi! I&rsquo;m SG <span class="logo__wave" aria-hidden="true">👋🏽</span></span>
+        </span>
+        <img src="images/signature-white.png" class="ed-logo__sig ed-logo__sig--dark" alt="Sudharsanan Ganapathy" />
+        <img src="images/signature-black.png" class="ed-logo__sig ed-logo__sig--light" alt="" aria-hidden="true" />
+      </a>
+
+      <nav class="ed-links" id="ed-site-menu" aria-label="Site">
+        <a href="index.html" aria-current="page">Home</a>
+        <span>/</span>
+        <a href="newsletter.html">Newsletter</a>
+        <span>/</span>
+        <a href="speaking.html">Speaking</a>
+        <span>/</span>
+        <a href="programs.html">Programs</a>
+        <span>/</span>
+        <a href="book.html">Book</a>
+        <span>/</span>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="true">
+        <span class="theme-toggle__sun" aria-hidden="true"></span>
+        <span class="theme-toggle__moon" aria-hidden="true"></span>
+      </button>
+
+      <button class="ed-menu-toggle" type="button" aria-label="Open menu" aria-controls="ed-site-menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
     </header>
 
-    <!-- HERO — full-bleed stage image -->
-    <section class="hero-stage">
-      <div class="hero-stage__bg" aria-hidden="true">
-        <img src="images/hero-fullbleed.png" alt="" />
-      </div>
-      <div class="hero-stage__inner reveal">
-        <div class="eyebrow hero-stage__kicker">
-          Entrepreneur · Coach · TEDx speaker
-        </div>
-        <h1 class="hero-stage__title">Helping people become&nbsp;brand&nbsp;worthy.</h1>
-        <p class="hero-stage__sub">
+    <main class="ed-page">
+      <section class="ed-hero" aria-labelledby="hero-title">
+        <p class="ed-kicker">Entrepreneur · Coach · TEDx speaker</p>
+        <h1 id="hero-title">
+          Helping people become <strong>brand worthy</strong>.
+        </h1>
+        <p>
           Join my community of personal growth enthusiasts who are building,
           scaling and monetising their personal brands online.
         </p>
-        <div class="hero-stage__cta-row">
-          <a href="programs.html" class="btn btn--signal">
-            Join 30,000+ subscribers
-            <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+        <div class="ed-actions">
+          <a href="programs.html" class="ed-pill">Join 30,000+ subscribers</a>
         </div>
-        <div class="hero-stage__stats">
-          <div class="hero-stage__stat">
-            <svg class="hero-stage__stat-icon" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
-              <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="18" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M3 20c0-3 2.7-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M16 19c0-2.2 2-4 4.5-4s2.5 0 3.5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-            <div class="hero-stage__stat-n">600K+</div>
-            <div class="hero-stage__stat-l">Community</div>
-          </div>
-          <div class="hero-stage__stat">
-            <svg class="hero-stage__stat-icon" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
-              <rect x="10.5" y="3" width="5" height="11" rx="2.5" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M6 11a7 7 0 0 0 14 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M13 18v4M9 22h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-            <div class="hero-stage__stat-n">200+</div>
-            <div class="hero-stage__stat-l">Keynotes · incl. TEDx</div>
-          </div>
-          <div class="hero-stage__stat">
-            <svg class="hero-stage__stat-icon" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
-              <circle cx="13" cy="13" r="10" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M3 13h20M13 3c2.8 3 4 6.5 4 10s-1.2 7-4 10c-2.8-3-4-6.5-4-10s1.2-7 4-10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-            <div class="hero-stage__stat-n">35K+</div>
-            <div class="hero-stage__stat-l">Business owners trained</div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- PRESS STRIP -->
-    <section class="press">
-      <div class="press__inner">
-        <div class="press__label">As seen on</div>
-        <div class="press__track">
-          <div class="press__row">
-            <span>TEDx</span>
-            <span>·</span>
-            <span>Business Standard</span>
-            <span>·</span>
-            <span>YourStory</span>
-            <span>·</span>
-            <span>The Economic Times</span>
-            <span>·</span>
-            <span>TEDx</span>
-            <span>·</span>
-            <span>Business Standard</span>
-            <span>·</span>
-            <span>YourStory</span>
-            <span>·</span>
-            <span>The Economic Times</span>
-            <span>·</span>
-            <span>TEDx</span>
-            <span>·</span>
-            <span>Business Standard</span>
-            <span>·</span>
-            <span>YourStory</span>
-            <span>·</span>
-            <span>The Economic Times</span>
-          </div>
-        </div>
-      </div>
-    </section>
+      <section class="ed-photo-block" aria-label="Portrait">
+        <figure class="ed-photo">
+          <img
+            src="images/portrait-studio.jpg"
+            alt="Sudharsanan Ganapathy"
+            loading="eager"
+          />
+          <figcaption>600K+ community · 200+ keynotes · 35K+ business owners trained</figcaption>
+        </figure>
+      </section>
 
-    <!-- NEWSLETTER FEATURE -->
-    <section class="feature">
-      <div class="wrap">
-        <div class="feature__grid">
-          <div class="feature__body reveal">
-            <span class="eyebrow">The newsletter</span>
-            <h2 class="display-lg">The letter 20,000+ business owners read before they start their work&nbsp;week.</h2>
-            <p class="lede">
-              Short, non-obvious takes on personal growth, leadership,
-              positioning, and the long game of visibility. Written in the
-              margins of client work, speaking travel, and the experience of
-              working with 500+ entrepreneurs.
-            </p>
-            <p class="lede muted">
-              Weekly. Free. No spam. One-click unsubscribe. High quality is the
-              only deal.
-            </p>
-            <form class="nl-form" style="max-width: 440px; border-color: var(--rule);">
-              <input type="email" placeholder="your@email.com" aria-label="Email" required />
-              <button type="submit">
-                Sign up now
-                <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-            </form>
-            <p style="margin-top: 14px; font-size: 13px; color: var(--muted);">
-              Join 30,000+ readers. No spam. Just high quality content.
-            </p>
-          </div>
-          <div class="feature__media reveal">
-            <img
-              src="images/at-desk.jpg"
-              alt="Sudharsanan Ganapathy at his desk"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+      <section class="ed-section" aria-labelledby="press-title">
+        <h2 id="press-title" class="ed-section-title">As seen on <sup>01</sup></h2>
+        <p class="ed-large-line">
+          <span>TEDx,</span>
+          <span>Business Standard,</span>
+          <span>YourStory,</span>
+          <span>The Economic Times</span>
+        </p>
+      </section>
 
-    <!-- ESSAYS / LATEST WORK -->
-    <section class="episodes">
-      <div class="wrap">
-        <div class="episodes__header reveal">
-          <div>
-            <div class="eyebrow">My latest brain dump</div>
-            <h2 class="display-lg" style="margin-top: 16px; max-width: 18ch;">
-              Ideas I&rsquo;m thinking about, out&nbsp;loud.
-            </h2>
-          </div>
-          <a href="newsletter.html" class="btn btn--dark">
-            All essays
-            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-              <path
-                d="M3 7h8m0 0L7 3m4 4-4 4"
-                stroke="currentColor"
-                stroke-width="1.5"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </a>
-        </div>
-        <div class="episodes__grid">
-          <article class="episode reveal">
-            <div class="episode__media" style="background: var(--signal-soft)">
-              <div class="episode__num">No. 042</div>
-              <div
-                style="
-                  width: 100%;
-                  height: 100%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-weight: 800;
-                  font-size: 32px;
-                  letter-spacing: -0.04em;
-                  color: var(--ink);
-                  padding: 24px;
-                  text-align: center;
-                  line-height: 0.95;
-                "
-              >
-                become<br />brand<br />worthy.
-              </div>
-            </div>
-            <div class="episode__body">
-              <div class="episode__kicker">On Personal Branding</div>
-              <h3 class="episode__title">
-                Why becoming brand worthy matters more than building the brand.
-              </h3>
-              <div class="episode__meta">7 min read</div>
-            </div>
-          </article>
-
-          <article class="episode reveal">
-            <div class="episode__media" style="background: var(--cream)">
-              <div class="episode__num">No. 041</div>
-              <div
-                style="
-                  width: 100%;
-                  height: 100%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-weight: 800;
-                  font-size: 28px;
-                  letter-spacing: -0.035em;
-                  color: var(--ink);
-                  padding: 24px;
-                  text-align: center;
-                  line-height: 1;
-                "
-              >
-                90%<br />personal,<br />10% brand.
-              </div>
-            </div>
-            <div class="episode__body">
-              <div class="episode__kicker">On Identity</div>
-              <h3 class="episode__title">
-                The work happens in private. The brand shows up in public.
-              </h3>
-              <div class="episode__meta">5 min read</div>
-            </div>
-          </article>
-
-          <article class="episode reveal">
-            <div class="episode__media" style="background: var(--ink); color: var(--paper)">
-              <div class="episode__num">No. 040</div>
-              <div
-                style="
-                  width: 100%;
-                  height: 100%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-weight: 800;
-                  font-size: 32px;
-                  letter-spacing: -0.035em;
-                  color: var(--paper);
-                  padding: 24px;
-                  text-align: center;
-                  line-height: 1;
-                "
-              >
-                identity<br /><span style="color: var(--signal)">shifts first.</span>
-              </div>
-            </div>
-            <div class="episode__body">
-              <div class="episode__kicker">On Inner-work</div>
-              <h3 class="episode__title">
-                One identity shift is all it takes. Here is how mine happened.
-              </h3>
-              <div class="episode__meta">6 min read</div>
-            </div>
-          </article>
-
-          <article class="episode reveal">
-            <div class="episode__media" style="background: var(--paper-2)">
-              <div class="episode__num">No. 039</div>
-              <div
-                style="
-                  width: 100%;
-                  height: 100%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-weight: 800;
-                  font-size: 28px;
-                  letter-spacing: -0.035em;
-                  color: var(--ink);
-                  padding: 24px;
-                  text-align: center;
-                  line-height: 1;
-                "
-              >
-                content<br />to<br />commerce.
-              </div>
-            </div>
-            <div class="episode__body">
-              <div class="episode__kicker">On Entrepreneurship</div>
-              <h3 class="episode__title">
-                If your content doesn&rsquo;t make business sense, it&rsquo;s noise.
-              </h3>
-              <div class="episode__meta">8 min read</div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- TOPICS INDEX -->
-    <section class="topic-index">
-      <div class="wrap">
-        <div class="topic-index__header reveal">
-          <div>
-            <div class="eyebrow">My world</div>
-            <h2 class="display-lg" style="margin-top: 20px; max-width: 14ch;">
-              Seven ideas I keep coming back&nbsp;to.
-            </h2>
-          </div>
-          <p class="topic-index__intro">
-            Most of the work I do with business owners lives somewhere on this
-            list. The essays, talks, and keynotes rotate through the same small
-            cluster of obsessions.
+      <section class="ed-section" aria-labelledby="newsletter-title">
+        <h2 id="newsletter-title" class="ed-section-title">The newsletter <sup>02</sup></h2>
+        <div class="ed-copy-stack">
+          <p>
+            The letter 20,000+ business owners read before they start their
+            work week.
+          </p>
+          <p>
+            Short, non-obvious takes on personal growth, leadership,
+            positioning, and the long game of visibility. Written in the
+            margins of client work, speaking travel, and the experience of
+            working with 500+ entrepreneurs.
+          </p>
+          <p>
+            Weekly. Free. No spam. One-click unsubscribe. High quality is the
+            only deal.
           </p>
         </div>
+        <form class="ed-form nl-form">
+          <input type="email" placeholder="your@email.com" aria-label="Email" required />
+          <button type="submit">Sign up now</button>
+        </form>
+        <p class="ed-small">Join 30,000+ readers. No spam. Just high quality content.</p>
+      </section>
 
-        <div class="topic-index__list reveal">
-          <a href="newsletter.html" class="topic-index__row">
-            <span class="topic-index__num">01.</span>
-            <h3 class="topic-index__name">Personal Growth</h3>
-            <span class="topic-index__blurb">
-              The work you need to put in to become someone worthy of
-              everything you want.
-            </span>
-            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <section class="ed-section" aria-labelledby="brain-title">
+        <h2 id="brain-title" class="ed-section-title">My latest brain dump <sup>03</sup></h2>
+        <p class="ed-section-lede">Ideas I&rsquo;m thinking about, out loud.</p>
+        <div class="ed-index-list">
+          <a href="newsletter.html" class="ed-index-row">
+            <span>On Personal Branding</span>
+            <strong>Why becoming brand worthy matters more than building the brand.</strong>
+            <em>7 min read</em>
           </a>
-
-          <a href="newsletter.html" class="topic-index__row">
-            <span class="topic-index__num">02.</span>
-            <h3 class="topic-index__name">Leadership</h3>
-            <span class="topic-index__blurb">
-              The qualities you need to serve others to the fullest.
-            </span>
-            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="newsletter.html" class="ed-index-row">
+            <span>On Identity</span>
+            <strong>The work happens in private. The brand shows up in public.</strong>
+            <em>5 min read</em>
           </a>
-
-          <a href="newsletter.html" class="topic-index__row">
-            <span class="topic-index__num">03.</span>
-            <h3 class="topic-index__name">Personal Branding</h3>
-            <span class="topic-index__blurb">
-              Becoming known for your work and becoming the face of your business.
-            </span>
-            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="newsletter.html" class="ed-index-row">
+            <span>On Inner-work</span>
+            <strong>One identity shift is all it takes. Here is how mine happened.</strong>
+            <em>6 min read</em>
           </a>
-
-          <a href="newsletter.html" class="topic-index__row">
-            <span class="topic-index__num">04.</span>
-            <h3 class="topic-index__name">Positioning</h3>
-            <span class="topic-index__blurb">
-              Building mental real-estate in your audience&rsquo;s minds and
-              being known for exactly what you do.
-            </span>
-            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-
-          <a href="newsletter.html" class="topic-index__row">
-            <span class="topic-index__num">05.</span>
-            <h3 class="topic-index__name">Inner-work</h3>
-            <span class="topic-index__blurb">
-              Everything you have to become within, so your outer world can
-              reflect it.
-            </span>
-            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-
-          <a href="newsletter.html" class="topic-index__row">
-            <span class="topic-index__num">06.</span>
-            <h3 class="topic-index__name">Coaching &amp; Mentorship</h3>
-            <span class="topic-index__blurb">
-              Getting on a journey of bettering yourself. And helping
-              others get on theirs.
-            </span>
-            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-
-          <a href="newsletter.html" class="topic-index__row">
-            <span class="topic-index__num">07.</span>
-            <h3 class="topic-index__name">Entrepreneurship</h3>
-            <span class="topic-index__blurb">
-              Value creation. Building from scratch through the boring,
-              unexciting, unscalable work.
-            </span>
-            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="newsletter.html" class="ed-index-row">
+            <span>On Entrepreneurship</span>
+            <strong>If your content doesn&rsquo;t make business sense, it&rsquo;s noise.</strong>
+            <em>8 min read</em>
           </a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- BOOK FEATURE -->
-    <section class="book">
-      <div class="wrap">
-        <div class="book__grid">
-          <div class="hero__media hero__media--book reveal" style="aspect-ratio:1/1;max-width:480px;">
-            <img src="images/book-cover.png" alt="Becoming Known — Sudharsanan Ganapathy" style="width:100%;height:100%;object-fit:contain;" />
-          </div>
-          <div class="reveal">
-            <span class="eyebrow">The book</span>
-            <h2 class="display-lg" style="margin-top: 20px;">
-              Becoming known.
-            </h2>
-            <p class="lede" style="margin-top: 24px;">
-              You can&rsquo;t document what does not exist. Personal branding
-              is more about what you do offline than what you do online.
-            </p>
-            <p class="lede" style="margin-top: 16px;">
-              So, here is a no-bullshit book on personal branding. Not
-              just from the brand-establishment POV but also the brand-building
-              POV, because building happens in private, not in front of an
-              audience.
-            </p>
-            <p class="lede muted" style="margin-top: 16px;">
-              The same frameworks have worked for 500+ business leaders across
-              12 countries.
-            </p>
-            <a
-              href="newsletter.html"
-              class="btn btn--dark"
-              style="margin-top: 32px;"
-            >
-              Pre-order here
-              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-                <path
-                  d="M3 7h8m0 0L7 3m4 4-4 4"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-          </div>
+      <section class="ed-section" aria-labelledby="world-title">
+        <h2 id="world-title" class="ed-section-title">My world <sup>04</sup></h2>
+        <p class="ed-section-lede">Seven ideas I keep coming back to.</p>
+        <p class="ed-muted-copy">
+          Most of the work I do with business owners lives somewhere on this
+          list. The essays, talks, and keynotes rotate through the same small
+          cluster of obsessions.
+        </p>
+        <div class="ed-topic-list">
+          <a href="newsletter.html"><span>01.</span><strong>Personal Growth</strong><em>The work you need to put in to become someone worthy of everything you want.</em></a>
+          <a href="newsletter.html"><span>02.</span><strong>Leadership</strong><em>The qualities you need to serve others to the fullest.</em></a>
+          <a href="newsletter.html"><span>03.</span><strong>Personal Branding</strong><em>Becoming known for your work and becoming the face of your business.</em></a>
+          <a href="newsletter.html"><span>04.</span><strong>Positioning</strong><em>Building mental real-estate in your audience&rsquo;s minds and being known for exactly what you do.</em></a>
+          <a href="newsletter.html"><span>05.</span><strong>Inner-work</strong><em>Everything you have to become within, so your outer world can reflect it.</em></a>
+          <a href="newsletter.html"><span>06.</span><strong>Coaching &amp; Mentorship</strong><em>Getting on a journey of bettering yourself. And helping others get on theirs.</em></a>
+          <a href="newsletter.html"><span>07.</span><strong>Entrepreneurship</strong><em>Value creation. Building from scratch through the boring, unexciting, unscalable work.</em></a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- NEWSLETTER BANNER -->
-    <section class="nl-banner">
-      <div class="wrap">
-        <div class="nl-banner__grid">
-          <div class="reveal">
-            <span class="eyebrow" style="color: var(--ink); opacity: 0.7;">
-              The newsletter
-            </span>
-            <h2 class="display-xl" style="margin-top: 20px;">
-              One&nbsp;email. <br />Every&nbsp;Saturday. <br />30,000 readers.
-            </h2>
-          </div>
-          <div class="reveal">
-            <form class="nl-form">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                aria-label="Email"
-                required
-              />
-              <button type="submit">
-                Sign up now
-                <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-                  <path
-                    d="M3 7h8m0 0L7 3m4 4-4 4"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </form>
-            <p class="nl-small">
-              Insights on personal growth, leadership, positioning, and the
-              long game of visibility. For free. High quality is the only deal.
-            </p>
-          </div>
+      <section class="ed-section" aria-labelledby="book-title">
+        <h2 id="book-title" class="ed-section-title">The book <sup>05</sup></h2>
+        <p class="ed-section-lede">Becoming known.</p>
+        <div class="ed-copy-stack">
+          <p>
+            You can&rsquo;t document what does not exist. Personal branding
+            is more about what you do offline than what you do online.
+          </p>
+          <p>
+            So, here is a no-bullshit book on personal branding. Not
+            just from the brand-establishment POV but also the brand-building
+            POV, because building happens in private, not in front of an
+            audience.
+          </p>
+          <p>
+            The same frameworks have worked for 500+ business leaders across
+            12 countries.
+          </p>
         </div>
-      </div>
-    </section>
+        <a href="newsletter.html" class="ed-pill">Pre-order here</a>
+      </section>
 
-    <!-- BIO / GALLERY -->
-    <section class="bio">
-      <div class="wrap">
-        <div class="bio__header reveal">
-          <div class="eyebrow">About</div>
-          <h2 class="display-lg" style="margin-top: 20px;">
+      <section class="ed-section" aria-labelledby="saturday-title">
+        <h2 id="saturday-title" class="ed-section-title">The newsletter <sup>06</sup></h2>
+        <p class="ed-section-lede">One email. Every Saturday. 30,000 readers.</p>
+        <form class="ed-form nl-form">
+          <input type="email" placeholder="your@email.com" aria-label="Email" required />
+          <button type="submit">Sign up now</button>
+        </form>
+        <p class="ed-small">
+          Insights on personal growth, leadership, positioning, and the
+          long game of visibility. For free. High quality is the only deal.
+        </p>
+      </section>
+
+      <section class="ed-section" aria-labelledby="about-title">
+        <h2 id="about-title" class="ed-section-title">About <sup>07</sup></h2>
+        <div class="ed-copy-stack">
+          <p>
             I help business owners find their grounding, make an identity
-            shift, and become brand&nbsp;worthy.
-          </h2>
+            shift, and become brand worthy.
+          </p>
           <p>
             Building a personal brand is one thing. Becoming brand worthy is
             another. Personal branding is 90% personal and 10% branding. I work
@@ -524,184 +209,63 @@
             Fourteen years in business. A content agency, a personal branding agency, a consulting company, angel investor, coach. Documented across a 600,000+ community, 200+ keynote speeches, and workshops that have trained 35,000+ business owners in 12 countries.
           </p>
         </div>
-      </div>
+      </section>
 
-      <div class="scroller-viewport">
-        <div class="scroller" data-gallery>
-          <!-- Set A -->
-          <div class="scroller__item"><img src="images/on-stage.jpg" alt="Sudharsanan on stage" loading="lazy" /></div>
-          <div class="scroller__tile">
-            <span class="eyebrow">01. Speaker</span>
-            <h3>TEDx + 200 stages. And counting.</h3>
-            <p>Keynotes, leadership offsites, workshops, and podcasts.</p>
-          </div>
-          <div class="scroller__item"><img src="images/at-desk.jpg" alt="Sudharsanan at his desk" loading="lazy" /></div>
-          <div class="scroller__tile scroller__tile--dark">
-            <span class="eyebrow">02. Community</span>
-            <h3>A 600,000+ online community.</h3>
-            <p>Across LinkedIn, Instagram, YouTube, and the newsletter.</p>
-          </div>
-          <div class="scroller__item"><img src="images/city-night.jpg" alt="Sudharsanan in the city" loading="lazy" /></div>
-          <div class="scroller__tile scroller__tile--cream">
-            <span class="eyebrow">03. Mentor</span>
-            <h3>35,000+ business owners trained in 12&nbsp;countries.</h3>
-            <p>Through workshops, intensives, and long-form engagements.</p>
-          </div>
-          <div class="scroller__item"><img src="images/street-profile.jpg" alt="Sudharsanan outdoors" loading="lazy" /></div>
-          <div class="scroller__item"><img src="images/portrait-studio.jpg" alt="Sudharsanan studio portrait" loading="lazy" /></div>
-          <div class="scroller__tile">
-            <span class="eyebrow">04. Writer</span>
-            <h3>A book in progress. Essays every&nbsp;week.</h3>
-            <p>Ship the thinking before it&rsquo;s tied up with a bow.</p>
-          </div>
-          <div class="scroller__item"><img src="images/cafe-portrait.jpg" alt="Sudharsanan at a cafe" loading="lazy" /></div>
-
-          <!-- Set B (duplicate for seamless loop) -->
-          <div class="scroller__item" aria-hidden="true"><img src="images/on-stage.jpg" alt="" loading="lazy" /></div>
-          <div class="scroller__tile" aria-hidden="true">
-            <span class="eyebrow">01. Speaker</span>
-            <h3>TEDx + 200 stages. And counting.</h3>
-            <p>Keynotes, leadership offsites, workshops, and podcasts.</p>
-          </div>
-          <div class="scroller__item" aria-hidden="true"><img src="images/at-desk.jpg" alt="" loading="lazy" /></div>
-          <div class="scroller__tile scroller__tile--dark" aria-hidden="true">
-            <span class="eyebrow">02. Community</span>
-            <h3>A 600,000+ online community.</h3>
-            <p>Across LinkedIn, Instagram, YouTube, and the newsletter.</p>
-          </div>
-          <div class="scroller__item" aria-hidden="true"><img src="images/city-night.jpg" alt="" loading="lazy" /></div>
-          <div class="scroller__tile scroller__tile--cream" aria-hidden="true">
-            <span class="eyebrow">03. Mentor</span>
-            <h3>35,000+ business owners trained in 12&nbsp;countries.</h3>
-            <p>Through workshops, intensives, and long-form engagements.</p>
-          </div>
-          <div class="scroller__item" aria-hidden="true"><img src="images/street-profile.jpg" alt="" loading="lazy" /></div>
-          <div class="scroller__item" aria-hidden="true"><img src="images/portrait-studio.jpg" alt="" loading="lazy" /></div>
-          <div class="scroller__tile" aria-hidden="true">
-            <span class="eyebrow">04. Writer</span>
-            <h3>A book in progress. Essays every&nbsp;week.</h3>
-            <p>Ship the thinking before it&rsquo;s tied up with a bow.</p>
-          </div>
-          <div class="scroller__item" aria-hidden="true"><img src="images/cafe-portrait.jpg" alt="" loading="lazy" /></div>
+      <section class="ed-section" aria-labelledby="say-title">
+        <h2 id="say-title" class="ed-section-title">What people say <sup>08</sup></h2>
+        <p class="ed-section-lede">Trusted by business owners across 12 countries.</p>
+        <div class="ed-quote-list">
+          <blockquote>
+            &ldquo;Sudharsanan changed how I think about showing up online. Within 90 days, inbound tripled.&rdquo;
+            <cite>Rohan Mehta · Founder, B2B SaaS</cite>
+          </blockquote>
+          <blockquote>
+            &ldquo;The most practical personal branding mentor I&rsquo;ve worked with. No fluff. Only what works.&rdquo;
+            <cite>Priya Narayan · CXO, Fintech</cite>
+          </blockquote>
+          <blockquote>
+            &ldquo;He doesn&rsquo;t sell a formula. He sharpens your point of view until it cuts through.&rdquo;
+            <cite>Arvind Kumar · Serial Entrepreneur</cite>
+          </blockquote>
+          <blockquote>
+            &ldquo;I&rsquo;ve sat through a lot of keynotes. Sudharsanan&rsquo;s is the one my team still quotes.&rdquo;
+            <cite>Nisha Raghavan · VP People, F500</cite>
+          </blockquote>
         </div>
-      </div>
+      </section>
 
-      <div class="bio__controls">
-        <button class="arrow-btn" aria-label="Previous" data-gallery-btn="prev">
-          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M11 7H3m0 0 4-4m-4 4 4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <button class="arrow-btn" aria-label="Pause" data-gallery-btn="pause">
-          <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="3" y="2" width="2" height="8" fill="currentColor"/><rect x="7" y="2" width="2" height="8" fill="currentColor"/></svg>
-        </button>
-        <button class="arrow-btn" aria-label="Next" data-gallery-btn="next">
-          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-    </section>
+      <section class="ed-section" aria-labelledby="work-title">
+        <h2 id="work-title" class="ed-section-title">Let&rsquo;s work together <sup>09</sup></h2>
+        <p class="ed-section-lede">Become a brand worthy person.</p>
+        <div class="ed-socials">
+          <a class="ed-social-pill" href="mailto:hello@sudharsananganapathy.com">
+            <img class="ed-social-pill__icon ed-social-pill__icon--mono" src="images/social/email.svg" alt="" aria-hidden="true" />
+            <span>hello@sudharsananganapathy.com</span>
+          </a>
+          <a class="ed-social-pill" href="https://www.linkedin.com/in/sudharsananganapathy/" target="_blank" rel="noreferrer">
+            <img class="ed-social-pill__icon" src="images/social/linkedin.png" alt="" aria-hidden="true" />
+            <span>LinkedIn</span>
+          </a>
+          <a class="ed-social-pill" href="https://www.instagram.com/sudharsananganapathy/" target="_blank" rel="noreferrer">
+            <img class="ed-social-pill__icon" src="images/social/instagram.png" alt="" aria-hidden="true" />
+            <span>Instagram</span>
+          </a>
+          <a class="ed-social-pill" href="https://www.youtube.com/@sudharsananganapathy" target="_blank" rel="noreferrer">
+            <img class="ed-social-pill__icon" src="images/social/youtube.png" alt="" aria-hidden="true" />
+            <span>YouTube</span>
+          </a>
+        </div>
+      </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="testi">
-      <div class="wrap">
-        <div class="testi__header reveal" style="justify-content: center; text-align: center;">
-          <div>
-            <div class="eyebrow">What people say</div>
-            <h2 class="display-lg" style="margin-top: 16px; max-width: 22ch; margin-left: auto; margin-right: auto;">
-              Trusted by business owners across 12&nbsp;countries.
-            </h2>
-          </div>
+      <footer class="ed-footer">
+        <div class="ed-legal">
+          <span>&copy; <span id="y"></span> SGI Collective.</span>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="refund.html">Refund &amp; Cancellation</a>
         </div>
-
-        <div class="testi-cards reveal" data-testi-cards>
-          <article class="testi-card" data-card-idx="0">
-            <span class="testi-card__avatar" aria-hidden="true">RM</span>
-            <span class="testi-card__mark" aria-hidden="true">&ldquo;</span>
-            <blockquote class="testi-card__quote">&ldquo;Sudharsanan changed how I think about showing up online. Within 90 days, inbound tripled.&rdquo;</blockquote>
-            <div class="testi-card__author">
-              <div class="testi-card__name">Rohan Mehta</div>
-              <div class="testi-card__role">Founder, B2B SaaS</div>
-            </div>
-          </article>
-          <article class="testi-card" data-card-idx="1">
-            <span class="testi-card__avatar" aria-hidden="true">PN</span>
-            <span class="testi-card__mark" aria-hidden="true">&ldquo;</span>
-            <blockquote class="testi-card__quote">&ldquo;The most practical personal branding mentor I&rsquo;ve worked with. No fluff. Only what works.&rdquo;</blockquote>
-            <div class="testi-card__author">
-              <div class="testi-card__name">Priya Narayan</div>
-              <div class="testi-card__role">CXO, Fintech</div>
-            </div>
-          </article>
-          <article class="testi-card" data-card-idx="2">
-            <span class="testi-card__avatar" aria-hidden="true">AK</span>
-            <span class="testi-card__mark" aria-hidden="true">&ldquo;</span>
-            <blockquote class="testi-card__quote">&ldquo;He doesn&rsquo;t sell a formula. He sharpens your point of view until it cuts through.&rdquo;</blockquote>
-            <div class="testi-card__author">
-              <div class="testi-card__name">Arvind Kumar</div>
-              <div class="testi-card__role">Serial Entrepreneur</div>
-            </div>
-          </article>
-          <article class="testi-card" data-card-idx="3">
-            <span class="testi-card__avatar" aria-hidden="true">NR</span>
-            <span class="testi-card__mark" aria-hidden="true">&ldquo;</span>
-            <blockquote class="testi-card__quote">&ldquo;I&rsquo;ve sat through a lot of keynotes. Sudharsanan&rsquo;s is the one my team still quotes.&rdquo;</blockquote>
-            <div class="testi-card__author">
-              <div class="testi-card__name">Nisha Raghavan</div>
-              <div class="testi-card__role">VP People, F500</div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer__inner">
-        <div class="footer__grid">
-          <div class="footer__col">
-            <span class="eyebrow">Let&rsquo;s work together</span>
-            <h3>Become a brand worthy person.</h3>
-            <a class="footer__email" href="mailto:hello@sudharsananganapathy.com">
-              hello@sudharsananganapathy.com
-              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-                <path
-                  d="M3 7h8m0 0L7 3m4 4-4 4"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-          </div>
-          <div class="footer__col">
-            <span class="eyebrow">Site</span>
-            <ul>
-              <li><a href="newsletter.html">Newsletter</a></li>
-              <li><a href="speaking.html">Speaking</a></li>
-              <li><a href="programs.html">Programs</a></li>
-              <li><a href="book.html">Book</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer__col">
-            <span class="eyebrow">Follow</span>
-            <ul>
-              <li><a href="https://www.linkedin.com/in/sudharsananganapathy/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-              <li><a href="https://www.instagram.com/sudharsananganapathy/" target="_blank" rel="noreferrer">Instagram</a></li>
-              <li><a href="https://www.youtube.com/@sudharsananganapathy" target="_blank" rel="noreferrer">YouTube</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer__bottom">
-          <div>&copy; <span id="y"></span> SGI Collective.</div>
-          <nav>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="refund.html">Refund &amp; Cancellation</a>
-          </nav>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </main>
 
     <script>
       document.getElementById("y").textContent = new Date().getFullYear();

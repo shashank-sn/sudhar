@@ -3387,9 +3387,9 @@ body.home-editorial[data-theme="light"] .theme-toggle__sun {
 
 .ed-link {
   font-family: "OT Jubilee Golden", Georgia, serif;
-  font-size: clamp(24px, 4vw, 36px);
+  font-size: inherit;
   text-decoration-line: underline;
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 1px;
   text-underline-offset: 0.15em;
   text-decoration-color: color-mix(in srgb, currentColor 62%, transparent);
 }
@@ -3408,6 +3408,26 @@ body.home-editorial[data-theme="light"] .theme-toggle__sun {
   object-fit: cover;
   filter: var(--ed-photo);
   border: 1px solid var(--ed-faint);
+}
+
+.ed-photo--wide img {
+  aspect-ratio: 16 / 10;
+}
+
+.ed-photo--book .ed-photo__box {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ed-faint);
+  padding: clamp(18px, 5vw, 46px);
+  background: var(--ed-fainter);
+}
+
+.ed-photo--book img {
+  width: min(100%, 420px);
+  aspect-ratio: 1 / 1.18;
+  object-fit: contain;
+  border: 0;
+  filter: none;
 }
 
 .ed-photo figcaption {
@@ -3437,6 +3457,10 @@ body.home-editorial[data-theme="light"] .theme-toggle__sun {
   line-height: 1.6;
   color: var(--ed-muted);
   margin: 18px 0 0;
+}
+
+.ed-hero--page {
+  padding-top: clamp(8px, 2vw, 18px);
 }
 
 @media (max-width: 767px) {
@@ -3500,6 +3524,102 @@ body.home-editorial .ed-form button {
   color: var(--ed-bg);
   white-space: nowrap;
   border: 0;
+}
+
+.ed-contact-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.ed-contact-form label {
+  display: grid;
+  gap: 8px;
+  font-family: "PP Fraktion Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--ed-muted);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ed-contact-form input,
+.ed-contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--ed-faint);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ed-text);
+  font: 18px/1.45 "OT Jubilee Silver", Georgia, serif;
+  padding: 14px 16px;
+  outline: 0;
+  resize: vertical;
+}
+
+.ed-contact-form input:focus,
+.ed-contact-form textarea:focus,
+body.home-editorial .ed-form input:focus {
+  border-color: var(--ed-text);
+  box-shadow: 0 0 0 3px var(--ed-fainter);
+}
+
+.ed-contact-form .ed-pill {
+  justify-self: start;
+  border: 1px solid var(--ed-text);
+  cursor: pointer;
+}
+
+.ed-contact-form.is-hidden {
+  display: none;
+}
+
+.form-success {
+  margin-top: 26px;
+  border-top: 1px solid var(--ed-faint);
+  border-bottom: 1px solid var(--ed-faint);
+  padding: 18px 0;
+  color: var(--ed-text);
+  font-family: "OT Jubilee Silver", Georgia, serif;
+  font-size: clamp(22px, 4vw, 34px);
+  line-height: 1.25;
+}
+
+.ed-company-list {
+  border-top: 1px solid var(--ed-faint);
+  margin-top: 34px;
+}
+
+.ed-company-list p {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.45fr) minmax(0, 1fr);
+  gap: 16px;
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--ed-faint);
+}
+
+.ed-company-list span {
+  font-family: "PP Fraktion Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--ed-muted);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ed-company-list strong,
+.ed-company-list a {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-family: "OT Jubilee Silver", Georgia, serif;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+.ed-company-list a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+  text-decoration-color: color-mix(in srgb, currentColor 52%, transparent);
 }
 
 .ed-small {
@@ -3635,6 +3755,61 @@ body.home-editorial .ed-form button {
   margin-top: 16px;
 }
 
+.ed-legal-section {
+  margin-top: clamp(10px, 3vw, 28px);
+}
+
+.ed-legal-body {
+  color: var(--ed-text);
+  font-family: "OT Jubilee Silver", Georgia, serif;
+  font-size: clamp(18px, 2.6vw, 23px);
+  line-height: 1.55;
+}
+
+.ed-legal-body h2 {
+  margin: clamp(34px, 6vw, 54px) 0 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--ed-faint);
+  font-family: "PP Fraktion Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ed-legal-body h2::before {
+  content: attr(data-num) ". ";
+  color: var(--ed-muted);
+}
+
+.ed-legal-body p,
+.ed-legal-body li {
+  margin: 12px 0;
+}
+
+.ed-legal-body ul,
+.ed-legal-body ol {
+  padding-left: 1.2em;
+}
+
+.ed-legal-body a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.ed-legal-intro {
+  font-size: clamp(24px, 4vw, 36px);
+  line-height: 1.32;
+  margin-top: 0;
+}
+
+.ed-legal-contact {
+  margin-top: clamp(34px, 6vw, 54px);
+  padding: 22px 0;
+  border-top: 1px solid var(--ed-faint);
+  border-bottom: 1px solid var(--ed-faint);
+}
+
 .ed-socials {
   display: flex;
   flex-wrap: wrap;
@@ -3726,7 +3901,7 @@ body.home-editorial[data-theme="light"] .ed-social-pill:focus-visible .ed-social
   text-underline-offset: 0.15em;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .ed-nav {
     grid-template-columns: auto 1fr auto auto;
     gap: 10px;
@@ -3782,7 +3957,8 @@ body.home-editorial[data-theme="light"] .ed-social-pill:focus-visible .ed-social
   }
 
   .ed-index-row,
-  .ed-topic-list a {
+  .ed-topic-list a,
+  .ed-company-list p {
     grid-template-columns: 1fr;
   }
 
@@ -3792,6 +3968,10 @@ body.home-editorial[data-theme="light"] .ed-social-pill:focus-visible .ed-social
 
   .ed-form {
     flex-direction: column;
+  }
+
+  .ed-photo--wide img {
+    aspect-ratio: 4 / 5;
   }
 
   .ed-form button {

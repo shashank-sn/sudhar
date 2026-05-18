@@ -4,339 +4,128 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>The Book | Sudharsanan Ganapathy</title>
-    <meta
-      name="description"
-      content="Zero bullshit guide to personal branding. Personal branding is 90% personal, 10% branding. This is the book about the 90%."
-    />
+    <meta name="description" content="Becoming Known, a no-bullshit book on personal branding by Sudharsanan Ganapathy." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://mattrothenberg.com" />
     <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@400;500&family=Reddit+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      /* Book page only — keep yellow shadow stable on hover (no glitch) */
-      .hero__media.hero__media--book,
-      .hero__media.hero__media--book:hover {
-        transform: none;
-        box-shadow: 18px 18px 0 0 var(--signal);
-        transition: none;
-      }
-      @media (max-width: 899px) {
-        .hero__media.hero__media--book,
-        .hero__media.hero__media--book:hover {
-          box-shadow: 12px 12px 0 0 var(--signal);
-        }
-      }
-.book-bullets {
-        display: grid;
-        gap: 20px;
-        margin-top: 32px;
-      }
-      .book-bullet {
-        display: grid;
-        grid-template-columns: 28px 1fr;
-        gap: 16px;
-        align-items: start;
-      }
-      .book-bullet__num {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--muted);
-        padding-top: 4px;
-      }
-      .book-bullet__text {
-        font-size: 17px;
-        line-height: 1.7;
-        color: var(--ink);
-      }
-      .book-bullet__text strong { font-weight: 700; }
-    </style>
   </head>
-  <body>
-    <header class="nav">
-      <div class="nav__inner">
-        <a href="index.html" class="logo">
-          <span class="logo__text">
-            <span class="logo__dot" aria-hidden="true"></span>
-            <span>Hi! I&rsquo;m SG <span class="logo__wave" aria-hidden="true">👋🏽</span></span>
-          </span>
-          <img src="images/signature-white.png" class="logo__sig" alt="Sudharsanan Ganapathy" />
-        </a>
-        <ul class="nav__links">
-          <li><a href="index.html" class="nav__link">Home</a></li>
-          <li><a href="newsletter.html" class="nav__link">Newsletter</a></li>
-          <li><a href="speaking.html" class="nav__link">Speaking</a></li>
-          <li><a href="programs.html" class="nav__link">Programs</a></li>
-          <li><a href="book.html" class="nav__link is-active">Book</a></li>
-          <li><a href="contact.html" class="nav__link">Contact</a></li>
-        </ul>
-        <button class="nav__burger" aria-label="Menu"><span></span><span></span></button>
-      </div>
-      <div class="nav__sheet">
-        <div class="nav__sheet-inner">
-          <a href="index.html">Home</a>
-          <a href="newsletter.html">Newsletter</a>
-          <a href="speaking.html">Speaking</a>
-          <a href="programs.html">Programs</a>
-          <a href="book.html">Book</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
+  <body class="home-editorial" data-theme="light">
+    <header class="ed-nav" aria-label="Primary navigation">
+      <a href="index.html" class="ed-logo">
+        <span class="logo__text">
+          <span class="logo__dot" aria-hidden="true"></span>
+          <span>Hi! I&rsquo;m SG <span class="logo__wave" aria-hidden="true">👋🏽</span></span>
+        </span>
+        <img src="images/signature-white.png" class="ed-logo__sig ed-logo__sig--dark" alt="Sudharsanan Ganapathy" />
+        <img src="images/signature-black.png" class="ed-logo__sig ed-logo__sig--light" alt="" aria-hidden="true" />
+      </a>
+
+      <nav class="ed-links" id="ed-site-menu" aria-label="Site">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="newsletter.html">Newsletter</a>
+        <span>/</span>
+        <a href="speaking.html">Speaking</a>
+        <span>/</span>
+        <a href="programs.html">Programs</a>
+        <span>/</span>
+        <a href="book.html" aria-current="page">Book</a>
+        <span>/</span>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="true">
+        <span class="theme-toggle__sun" aria-hidden="true"></span>
+        <span class="theme-toggle__moon" aria-hidden="true"></span>
+      </button>
+
+      <button class="ed-menu-toggle" type="button" aria-label="Open menu" aria-controls="ed-site-menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero__inner">
-        <div class="hero__text reveal">
-          <div class="eyebrow hero__kicker">The book, coming 2026</div>
-          <h1 class="display-xxl">Becoming known.</h1>
-          <p class="hero__sub">
-            Personal branding is 90% personal and 10% branding. Most books
-            obsess over the 10%. This one is about the 90%: the work
-            you put in before the world ever sees a thing.
-          </p>
-          <div class="hero__cta-row">
-            <a href="#preorder" class="btn btn--signal">
-              Pre-order the book
-              <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
+    <main class="ed-page">
+      <section class="ed-hero ed-hero--page" aria-labelledby="page-title">
+        <p class="ed-kicker">The book</p>
+        <h1 id="page-title">Becoming known.</h1>
+        <p>You can&rsquo;t document what does not exist. Personal branding is more about what you do offline than what you do online.</p>
+        <div class="ed-actions"><a href="#preorder" class="ed-pill">Pre-order here</a></div>
+      </section>
 
-          <div class="hero__values">
-            <div class="hero__value">
-              <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 5h12M3 9h9M3 13h7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-              <div>
-                <p class="hero__value-t">Built on real work</p>
-                <p class="hero__value-d">Frameworks tested with 500+ business leaders across 12 countries.</p>
-              </div>
-            </div>
-            <div class="hero__value">
-              <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M9 5v4l3 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
-              <div>
-                <p class="hero__value-t">Inner-work first</p>
-                <p class="hero__value-d">Becoming brand worthy before building the brand.</p>
-              </div>
-            </div>
-            <div class="hero__value">
-              <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 6l6 5 6-5M3 6v7h12V6" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/></svg>
-              <div>
-                <p class="hero__value-t">Early reader access</p>
-                <p class="hero__value-d">Pre-order to get drafts, margin notes, and a hand in the final cut.</p>
-              </div>
-            </div>
+      <section class="ed-photo-block" aria-label="Book cover">
+        <figure class="ed-photo ed-photo--book">
+          <div class="ed-photo__box">
+            <img src="images/book-cover.png" alt="Becoming Known book cover by Sudharsanan Ganapathy" loading="eager" />
           </div>
-        </div>
-        <div class="hero__media hero__media--book reveal" style="aspect-ratio:1/1;overflow:hidden;display:flex;align-items:center;justify-content:center;">
-          <img src="images/book-cover.png" alt="The book — Sudharsanan Ganapathy" style="width:100%;height:100%;object-fit:contain;" />
-        </div>
-      </div>
-    </section>
+          <figcaption>A book on the private work behind public visibility.</figcaption>
+        </figure>
+      </section>
 
-    <!-- WHAT THE BOOK IS ABOUT -->
-    <section class="feature" id="what-its-about">
-      <div class="wrap">
-        <div class="feature__grid feature__grid--flip">
-          <div class="feature__body reveal">
-            <span class="eyebrow">What it&rsquo;s about</span>
-            <h2 class="display-lg">You can&rsquo;t document what doesn&rsquo;t exist.</h2>
-            <p class="lede">
-              Most personal branding advice teaches you how to talk about the
-              work. This book is about doing the work that&rsquo;s worth talking
-              about: the inner-work, the identity shifts, the daily
-              practice that makes a person worthy of being a brand.
-            </p>
-            <p class="lede muted">
-              Written from 14 years of building businesses, training 35,000+
-              entrepreneurs across 12 countries, and 200+ keynotes including TEDx.
-            </p>
-          </div>
-          <div class="feature__media reveal">
-            <img src="images/portrait-studio.jpg" alt="Sudharsanan Ganapathy" loading="lazy" />
-          </div>
+      <section class="ed-section" aria-labelledby="about-book-title">
+        <h2 id="about-book-title" class="ed-section-title">What it is about <sup>01</sup></h2>
+        <div class="ed-copy-stack">
+          <p>Here is a no-bullshit book on personal branding. Not just from the brand-establishment POV but also the brand-building POV.</p>
+          <p>Because building happens in private, not in front of an audience. The public brand can only document the private work that already exists.</p>
+          <p>The same frameworks have worked for 500+ business leaders across 12 countries.</p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- INSIDE THE BOOK -->
-    <section class="topic-index">
-      <div class="wrap">
-        <div class="topic-index__header reveal">
-          <div>
-            <div class="eyebrow">Inside the book</div>
-            <h2 class="display-lg" style="margin-top: 20px; max-width: 16ch;">
-              The frameworks. The reps. The why.
-            </h2>
-          </div>
-          <p class="topic-index__intro">
-            Each chapter is built around a framework that has worked in the
-            field: cohorts, intensives, and 1:1 engagements with
-            founders, CXOs, coaches, and operators.
-          </p>
+      <section class="ed-section" aria-labelledby="chapters-title">
+        <h2 id="chapters-title" class="ed-section-title">Inside <sup>02</sup></h2>
+        <div class="ed-topic-list">
+          <a href="#preorder"><span>01.</span><strong>Become worthy first</strong><em>The internal standards that make visibility feel earned.</em></a>
+          <a href="#preorder"><span>02.</span><strong>Own your point of view</strong><em>Stop sounding like the market and start saying the thing only you can say.</em></a>
+          <a href="#preorder"><span>03.</span><strong>Document the real work</strong><em>Build public trust from lived proof, not content tricks.</em></a>
+          <a href="#preorder"><span>04.</span><strong>Make business sense</strong><em>Connect visibility to positioning, trust, and value creation.</em></a>
         </div>
+      </section>
 
-        <div class="topic-index__list reveal">
-          <a href="#preorder" class="topic-index__row">
-            <span class="topic-index__num">01.</span>
-            <h3 class="topic-index__name">Identity Shifting</h3>
-            <span class="topic-index__blurb">
-              Recentering with yourself, so what you put out is the most
-              authentic version of you.
-            </span>
-            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <section class="ed-section" id="preorder" aria-labelledby="preorder-title">
+        <h2 id="preorder-title" class="ed-section-title">Pre-order <sup>03</sup></h2>
+        <p class="ed-section-lede">Get on the list for launch notes.</p>
+        <form class="ed-form nl-form">
+          <input type="email" placeholder="your@email.com" aria-label="Email" required />
+          <button type="submit">Join the list</button>
+        </form>
+        <p class="ed-small">No spam. Only book updates and the occasional useful note.</p>
+      </section>
+
+      <section class="ed-section" aria-labelledby="work-title">
+        <h2 id="work-title" class="ed-section-title">Let&rsquo;s work together <sup>04</sup></h2>
+        <p class="ed-section-lede">Become a brand worthy person.</p>
+        <div class="ed-socials">
+          <a class="ed-social-pill" href="mailto:hello@sudharsananganapathy.com">
+            <img class="ed-social-pill__icon ed-social-pill__icon--mono" src="images/social/email.svg" alt="" aria-hidden="true" />
+            <span>hello@sudharsananganapathy.com</span>
           </a>
-          <a href="#preorder" class="topic-index__row">
-            <span class="topic-index__num">02.</span>
-            <h3 class="topic-index__name">Intentions</h3>
-            <span class="topic-index__blurb">
-              Knowing why you do what you do, and aligning everything
-              you build to that why.
-            </span>
-            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a class="ed-social-pill" href="https://www.linkedin.com/in/sudharsananganapathy/" target="_blank" rel="noreferrer">
+            <img class="ed-social-pill__icon" src="images/social/linkedin.png" alt="" aria-hidden="true" />
+            <span>LinkedIn</span>
           </a>
-          <a href="#preorder" class="topic-index__row">
-            <span class="topic-index__num">03.</span>
-            <h3 class="topic-index__name">Consistency</h3>
-            <span class="topic-index__blurb">
-              How you do anything is how you do everything. The compounding
-              math of small reps done in public.
-            </span>
-            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a class="ed-social-pill" href="https://www.instagram.com/sudharsananganapathy/" target="_blank" rel="noreferrer">
+            <img class="ed-social-pill__icon" src="images/social/instagram.png" alt="" aria-hidden="true" />
+            <span>Instagram</span>
           </a>
-          <a href="#preorder" class="topic-index__row">
-            <span class="topic-index__num">04.</span>
-            <h3 class="topic-index__name">Positioning</h3>
-            <span class="topic-index__blurb">
-              Building mental real-estate in your audience&rsquo;s mind,
-              for exactly the work you do.
-            </span>
-            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#preorder" class="topic-index__row">
-            <span class="topic-index__num">05.</span>
-            <h3 class="topic-index__name">Visibility</h3>
-            <span class="topic-index__blurb">
-              How to be yourself online and still gather the audience that can
-              do business with you.
-            </span>
-            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#preorder" class="topic-index__row">
-            <span class="topic-index__num">06.</span>
-            <h3 class="topic-index__name">Content to Commerce</h3>
-            <span class="topic-index__blurb">
-              Making your audience make business sense, without
-              hard-selling, ever.
-            </span>
-            <svg class="topic-index__arrow" width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a class="ed-social-pill" href="https://www.youtube.com/@sudharsananganapathy" target="_blank" rel="noreferrer">
+            <img class="ed-social-pill__icon" src="images/social/youtube.png" alt="" aria-hidden="true" />
+            <span>YouTube</span>
           </a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- WHO IT IS FOR -->
-    <section class="feature feature--cream">
-      <div class="wrap">
-        <div class="feature__grid feature__grid--flip">
-          <div class="feature__body reveal">
-            <span class="eyebrow">Who it&rsquo;s for</span>
-            <h2 class="display-lg">For the people who&rsquo;ve done the work, quietly, for years.</h2>
-            <div class="book-bullets">
-              <div class="book-bullet">
-                <span class="book-bullet__num">01</span>
-                <p class="book-bullet__text"><strong>Business owners:</strong> size of the business doesn&rsquo;t matter, the seriousness of the work does.</p>
-              </div>
-              <div class="book-bullet">
-                <span class="book-bullet__num">02</span>
-                <p class="book-bullet__text"><strong>C-suite leaders</strong> who want to be known for the company they keep.</p>
-              </div>
-              <div class="book-bullet">
-                <span class="book-bullet__num">03</span>
-                <p class="book-bullet__text"><strong>Professionals &amp; domain experts</strong> with 10+ years of real-world reps.</p>
-              </div>
-              <div class="book-bullet">
-                <span class="book-bullet__num">04</span>
-                <p class="book-bullet__text"><strong>Coaches &amp; freelancers</strong> ready to stop performing and start practicing.</p>
-              </div>
-            </div>
-          </div>
-          <div class="feature__media reveal">
-            <img src="images/cafe-portrait.jpg" alt="Sudharsanan working" loading="lazy" />
-          </div>
+      <footer class="ed-footer">
+        <div class="ed-legal">
+          <span>&copy; <span id="y"></span> SGI Collective.</span>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="refund.html">Refund &amp; Cancellation</a>
         </div>
-      </div>
-    </section>
+      </footer>
+    </main>
 
-    <!-- PRE-ORDER CTA -->
-    <section class="nl-banner" id="preorder">
-      <div class="wrap">
-        <div class="nl-banner__grid">
-          <div class="reveal">
-            <span class="eyebrow" style="color: var(--ink); opacity: 0.7;">Pre-order</span>
-            <h2 class="display-xl" style="margin-top: 20px;">
-              Be among the first&nbsp;readers.
-            </h2>
-            <p class="nl-small" style="margin-top: 20px;">
-              Drop your email. We&rsquo;ll send you the pre-order link the
-              moment it goes live, plus the first chapter as soon as it&rsquo;s
-              ready.
-            </p>
-          </div>
-          <div class="reveal">
-            <form class="nl-form">
-              <input type="email" placeholder="your@email.com" aria-label="Email" required />
-              <button type="submit">
-                Notify me
-                <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m0 0L7 3m4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-            </form>
-            <p class="nl-small">
-              No spam. One email when the book is ready, one when the
-              pre-order opens. That&rsquo;s it.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer__inner">
-        <div class="footer__grid">
-          <div class="footer__col">
-            <span class="eyebrow">Let&rsquo;s work together</span>
-            <h3>Become a brand worthy person.</h3>
-            <a class="footer__email" href="mailto:hello@sudharsananganapathy.com">hello@sudharsananganapathy.com</a>
-          </div>
-          <div class="footer__col">
-            <span class="eyebrow">Site</span>
-            <ul>
-              <li><a href="newsletter.html">Newsletter</a></li>
-              <li><a href="speaking.html">Speaking</a></li>
-              <li><a href="programs.html">Programs</a></li>
-              <li><a href="book.html">Book</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer__col">
-            <span class="eyebrow">Follow</span>
-            <ul>
-              <li><a href="https://www.linkedin.com/in/sudharsananganapathy/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-              <li><a href="https://www.instagram.com/sudharsananganapathy/" target="_blank" rel="noreferrer">Instagram</a></li>
-              <li><a href="https://www.youtube.com/@sudharsananganapathy" target="_blank" rel="noreferrer">YouTube</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer__bottom">
-          <div>&copy; <span id="y"></span> SGI Collective.</div>
-          <nav>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="refund.html">Refund &amp; Cancellation</a>
-          </nav>
-        </div>
-      </div>
-    </footer>
     <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
     <script src="script.js"></script>
   </body>

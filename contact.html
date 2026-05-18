@@ -4,131 +4,98 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Contact | Sudharsanan Ganapathy</title>
-    <meta name="description" content="Let's work together. Tell me about your work, your audience, or the stage you'd like to fill." />
+    <meta name="description" content="Company contact details, email, and official social media links for Sudharsanan Ganapathy Innovations LLP." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://mattrothenberg.com" />
     <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@400;500&family=Reddit+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <header class="nav">
-      <div class="nav__inner">
-        <a href="index.html" class="logo">
-          <span class="logo__text">
-            <span class="logo__dot" aria-hidden="true"></span>
-            <span>Hi! I&rsquo;m SG <span class="logo__wave" aria-hidden="true">👋🏽</span></span>
-          </span>
-          <img src="images/signature-white.png" class="logo__sig" alt="Sudharsanan Ganapathy" />
-        </a>
-        <ul class="nav__links">
-          <li><a href="index.html" class="nav__link">Home</a></li>
-          <li><a href="newsletter.html" class="nav__link">Newsletter</a></li>
-          <li><a href="speaking.html" class="nav__link">Speaking</a></li>
-          <li><a href="programs.html" class="nav__link">Programs</a></li>
-          <li><a href="book.html" class="nav__link">Book</a></li>
-          <li><a href="contact.html" class="nav__link is-active">Contact</a></li>
-        </ul>
-        <button class="nav__burger" aria-label="Menu"><span></span><span></span></button>
-      </div>
-      <div class="nav__sheet">
-        <div class="nav__sheet-inner">
-          <a href="index.html">Home</a>
-          <a href="newsletter.html">Newsletter</a>
-          <a href="speaking.html">Speaking</a>
-          <a href="programs.html">Programs</a>
-          <a href="book.html">Book</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
+  <body class="home-editorial" data-theme="light">
+    <header class="ed-nav" aria-label="Primary navigation">
+      <a href="index.html" class="ed-logo">
+        <span class="logo__text">
+          <span class="logo__dot" aria-hidden="true"></span>
+          <span>Hi! I&rsquo;m SG <span class="logo__wave" aria-hidden="true">👋🏽</span></span>
+        </span>
+        <img src="images/signature-white.png" class="ed-logo__sig ed-logo__sig--dark" alt="Sudharsanan Ganapathy" />
+        <img src="images/signature-black.png" class="ed-logo__sig ed-logo__sig--light" alt="" aria-hidden="true" />
+      </a>
+
+      <nav class="ed-links" id="ed-site-menu" aria-label="Site">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="newsletter.html">Newsletter</a>
+        <span>/</span>
+        <a href="speaking.html">Speaking</a>
+        <span>/</span>
+        <a href="programs.html">Programs</a>
+        <span>/</span>
+        <a href="book.html">Book</a>
+        <span>/</span>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="true">
+        <span class="theme-toggle__sun" aria-hidden="true"></span>
+        <span class="theme-toggle__moon" aria-hidden="true"></span>
+      </button>
+
+      <button class="ed-menu-toggle" type="button" aria-label="Open menu" aria-controls="ed-site-menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
     </header>
 
-    <section class="hero" style="padding-bottom: clamp(96px, 13vw, 200px);">
-      <div class="hero__inner" style="display: block; max-width: var(--max);">
-        <div class="reveal" style="max-width: 820px;">
-          <div class="eyebrow hero__kicker">Contact</div>
-          <h1 class="display-xxl" style="max-width: 18ch;">Let&rsquo;s work&nbsp;together.</h1>
-          <p class="hero__sub" style="max-width: 56ch;">
-            Tell me about your work, your audience, or the stage you&rsquo;d
-            like to fill. I read every note myself and come back within three
-            business days.
-          </p>
-          <a
-            href="mailto:hello@sudharsananganapathy.com"
-            style="display: inline-block; margin-top: clamp(40px, 5vw, 64px); font-size: clamp(17px,2.8vw,36px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; border-bottom: 2px solid var(--signal); padding-bottom: 4px; overflow-wrap: break-word; word-break: break-all;"
-          >
-            hello@sudharsananganapathy.com
+    <main class="ed-page">
+      <section class="ed-hero ed-hero--page" aria-labelledby="page-title">
+        <p class="ed-kicker">Contact</p>
+        <h1 id="page-title">Company details.</h1>
+        <p>Official contact details and social links for Sudharsanan Ganapathy Innovations LLP.</p>
+      </section>
+
+      <section class="ed-section" aria-labelledby="company-title">
+        <h2 id="company-title" class="ed-section-title">Company <sup>01</sup></h2>
+        <div class="ed-company-list">
+          <p><span>Entity</span><strong>Sudharsanan Ganapathy Innovations LLP</strong></p>
+          <p><span>Email</span><a href="mailto:hello@sudharsananganapathy.com">hello@sudharsananganapathy.com</a></p>
+          <p><span>Support</span><a href="mailto:support@sudharsananganapathy.com">support@sudharsananganapathy.com</a></p>
+          <p><span>Website</span><a href="https://sudharsananganapathy.com/">sudharsananganapathy.com</a></p>
+        </div>
+      </section>
+
+      <section class="ed-section" aria-labelledby="social-title">
+        <h2 id="social-title" class="ed-section-title">Social media <sup>02</sup></h2>
+        <div class="ed-socials">
+          <a class="ed-social-pill" href="mailto:hello@sudharsananganapathy.com">
+            <img class="ed-social-pill__icon ed-social-pill__icon--mono" src="images/social/email.svg" alt="" aria-hidden="true" />
+            <span>hello@sudharsananganapathy.com</span>
+          </a>
+          <a class="ed-social-pill" href="https://www.linkedin.com/in/sudharsananganapathy/" target="_blank" rel="noreferrer">
+            <img class="ed-social-pill__icon" src="images/social/linkedin.png" alt="" aria-hidden="true" />
+            <span>LinkedIn</span>
+          </a>
+          <a class="ed-social-pill" href="https://www.instagram.com/sudharsananganapathy/" target="_blank" rel="noreferrer">
+            <img class="ed-social-pill__icon" src="images/social/instagram.png" alt="" aria-hidden="true" />
+            <span>Instagram</span>
+          </a>
+          <a class="ed-social-pill" href="https://www.youtube.com/@sudharsananganapathy" target="_blank" rel="noreferrer">
+            <img class="ed-social-pill__icon" src="images/social/youtube.png" alt="" aria-hidden="true" />
+            <span>YouTube</span>
           </a>
         </div>
+      </section>
 
-        <div class="reveal" style="margin-top: clamp(72px, 9vw, 120px);">
-          <div class="eyebrow">Elsewhere</div>
-          <ul style="list-style: none; padding: 0; margin: 24px 0 0; border-top: 1px solid var(--rule);">
-            <li style="border-bottom: 1px solid var(--rule);">
-              <a href="https://www.linkedin.com/in/sudharsananganapathy/" target="_blank" rel="noreferrer" class="social-row">
-                <span class="social-num">01</span>
-                <span class="social-name">LinkedIn</span>
-                <span class="social-meta">Professional network</span>
-                <svg width="22" height="22" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 L 11 3 M5 3h6v6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </li>
-            <li style="border-bottom: 1px solid var(--rule);">
-              <a href="https://www.instagram.com/sudharsananganapathy/" target="_blank" rel="noreferrer" class="social-row">
-                <span class="social-num">02</span>
-                <span class="social-name">Instagram</span>
-                <span class="social-meta">Daily notes &amp; reels</span>
-                <svg width="22" height="22" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 L 11 3 M5 3h6v6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com/@sudharsananganapathy" target="_blank" rel="noreferrer" class="social-row">
-                <span class="social-num">03</span>
-                <span class="social-name">YouTube</span>
-                <span class="social-meta">Keynotes and long-form</span>
-                <svg width="22" height="22" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 L 11 3 M5 3h6v6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </li>
-          </ul>
+      <footer class="ed-footer">
+        <div class="ed-legal">
+          <span>&copy; <span id="y"></span> SGI Collective.</span>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="refund.html">Refund &amp; Cancellation</a>
         </div>
-      </div>
-    </section>
+      </footer>
+    </main>
 
-    <footer class="footer">
-      <div class="footer__inner">
-        <div class="footer__grid">
-          <div class="footer__col">
-            <span class="eyebrow">Let&rsquo;s work together</span>
-            <h3>Become a brand worthy person.</h3>
-            <a class="footer__email" href="mailto:hello@sudharsananganapathy.com">hello@sudharsananganapathy.com</a>
-          </div>
-          <div class="footer__col">
-            <span class="eyebrow">Site</span>
-            <ul>
-              <li><a href="newsletter.html">Newsletter</a></li>
-              <li><a href="speaking.html">Speaking</a></li>
-              <li><a href="programs.html">Programs</a></li>
-              <li><a href="book.html">Book</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer__col">
-            <span class="eyebrow">Follow</span>
-            <ul>
-              <li><a href="https://www.linkedin.com/in/sudharsananganapathy/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-              <li><a href="https://www.instagram.com/sudharsananganapathy/" target="_blank" rel="noreferrer">Instagram</a></li>
-              <li><a href="https://www.youtube.com/@sudharsananganapathy" target="_blank" rel="noreferrer">YouTube</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer__bottom">
-          <div>&copy; <span id="y"></span> SGI Collective.</div>
-          <nav>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="refund.html">Refund &amp; Cancellation</a>
-          </nav>
-        </div>
-      </div>
-    </footer>
     <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
     <script src="script.js"></script>
   </body>
